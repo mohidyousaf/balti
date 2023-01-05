@@ -26,17 +26,29 @@ import 'providers/business_provider.dart';
 import 'providers/location_provider.dart';
 import 'providers/product_provider.dart';
 import 'providers/feedback_provider.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
+  void initState() {
+    super.initState();
+    initPlatform();
+    // sendnotification();
+  }
+
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
@@ -141,5 +153,22 @@ class MyApp extends StatelessWidget {
         );
       }),
     );
+  }
+}
+
+Future<void> initPlatform() async {
+  try {
+    // OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+    await OneSignal.shared.setAppId("085fe5f1-7940-4ee0-8447-704b42ae861d");
+    print("Getting DeviceState");
+    OneSignal.shared.getDeviceState().then((deviceState) {
+      print("DeviceState: ${deviceState?.jsonRepresentation()}");
+    });
+    // The promptForPushNotificationsWithUserResponse function will show the iOS or Android push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
+    OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+      print("Accepted permission: $accepted");
+    });
+  } catch (e) {
+    print(e);
   }
 }

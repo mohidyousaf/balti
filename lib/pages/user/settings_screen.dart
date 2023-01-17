@@ -1,3 +1,4 @@
+import 'package:balti_app/pages/auth/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/size_config.dart';
@@ -73,7 +74,14 @@ class SettingsBody extends StatelessWidget {
               child: CustomIconButton(
                 color: const Color.fromARGB(195, 209, 27, 39),
                 buttonLabel: "Logout",
-                onPressHandler: () async {},
+                onPressHandler: () async {
+                  Navigator.push<void>(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const SignUpScreen(),
+                    ),
+                  );
+                },
               ),
             ),
           ],

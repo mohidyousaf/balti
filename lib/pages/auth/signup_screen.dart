@@ -140,8 +140,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         padding: EdgeInsets.zero,
                       ),
                       onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed(LoginScreen.routeName);
+                        Navigator.push<void>(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (BuildContext context) =>
+                                const LoginScreen(),
+                          ),
+                        );
                       },
                       child: Text(
                         'Login',

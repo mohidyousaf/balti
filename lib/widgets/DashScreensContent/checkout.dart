@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'dart:math' as math;
 
 import '../../../widgets/product_card.dart';
-import '../../../widgets/restaurant_cart.dart';
+import '../restaurant_card.dart';
 import '../../models/business.dart';
 import '../../models/product.dart';
 import '../../pages/user/map_screen.dart';

@@ -1,11 +1,13 @@
 import 'dart:math' as math;
 
+import 'package:balti_app/pages/seller/seller_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../pages/user/map_screen.dart';
 import '../../providers/location_provider.dart';
 import '../../utils/size_config.dart';
+import '../DashScreensContent/checkout.dart';
 import '../search_bar.dart';
 
 class HomeAppBar extends StatefulWidget with PreferredSizeWidget {
@@ -98,12 +100,26 @@ class _HomeAppBarState extends State<HomeAppBar> {
         IconButton(
           color: Colors.black,
           icon: const Icon(Icons.shopping_cart),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push<void>(
+              context,
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => const Checkout(),
+              ),
+            );
+          },
         ),
         IconButton(
           color: Colors.black,
           icon: const Icon(Icons.swap_horiz_outlined),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push<void>(
+              context,
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => const SellerDashboard(userId: '',),
+              ),
+            );
+          },
         ),
       ],
     );

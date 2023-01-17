@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../widgets/product_card.dart';
-import '../../../widgets/restaurant_cart.dart';
+import '../restaurant_card.dart';
 import '../../models/business.dart';
 import '../../models/product.dart';
 import '../../providers/business_provider.dart';

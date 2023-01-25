@@ -57,12 +57,12 @@ class _MyAppState extends State<MyApp> {
         ),
         ChangeNotifierProxyProvider<Auth, Businesses>(
           create: (_) => Businesses(
-            authToken: '',
+            // authToken: '',
             businesses: [],
             userId: '',
           ),
           update: (ctx, auth, previousBusinesses) => Businesses(
-            authToken: 'auth.token!',
+            // authToken: 'auth.token!',
             businesses: previousBusinesses == null
                 ? []
                 : previousBusinesses.getBusinesses,

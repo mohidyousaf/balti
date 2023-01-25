@@ -35,8 +35,8 @@ class Orders with ChangeNotifier {
     //Send Api call to server for add
     // create new cart item with current cart id
     orderItems = [];
-    final response = await http.get(
-        Uri.parse('https://balti-api.herokuapp.com/api/businesses/list/$id'));
+    final response =
+        await http.get(Uri.parse('localhost:3000/api/businesses/list/$id'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,

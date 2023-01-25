@@ -2,14 +2,16 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
-
+import '../repository/networkHandler.dart';
 import '../models/business.dart';
 
+var nw = NetworkHandler();
+
 class Businesses with ChangeNotifier {
-  final String authToken;
+  // final String authToken;
   final String userId;
   Businesses({
-    required this.authToken,
+    // required this.authToken,
     required this.businesses,
     required this.userId,
   });
@@ -21,18 +23,30 @@ class Businesses with ChangeNotifier {
   }
 
   Future<void> findByUserId(String id) async {
+    print({userId: id});
     businesses = [];
-    final response = await http.get(
-        Uri.parse('https://balti-api.herokuapp.com/api/businesses/list/$id'));
 
-    if (response.statusCode == 200) {
+    dynamic response;
+    try {
+      response = await nw.get("businesses/list/$id");
+    } catch (e) {
+      debugPrint('debug: $e');
+    }
+
+    print(response.length);
+    if (response.length > 0) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      var jsonResponse = jsonDecode(response.body);
-      for (var i = 0; i < jsonResponse.length; i = i + 1) {
+      for (var i = 0; i < response.length; i = i + 1) {
         print("********************");
-        print(jsonResponse[i]);
-        businesses.add(Business.fromJson(jsonResponse[i]));
+        print({i: response[i]});
+        print(response[i]['location']);
+        // print(response[i]?.location?.coordinates);
+        try {
+          businesses.add(Business.fromJson(response[i]));
+        } catch (e) {
+          debugPrint('debug: $e');
+        }
       }
       // return businesses.firstWhere((bus) => bus.id == id);
     } else {
@@ -40,13 +54,14 @@ class Businesses with ChangeNotifier {
       // then throw an exception.
       throw Exception('Failed to load album');
     }
+    print({businesses});
     notifyListeners();
   }
 
   Future<void> addBusiness(Business business) async {
     //Send Api call to server for add
     final response = await http.post(
-      Uri.parse('https://balti-api.herokuapp.com/api/businesses'),
+      Uri.parse('localhost:3000/api/businesses'),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "user": business.ownerId,
@@ -78,8 +93,7 @@ class Businesses with ChangeNotifier {
   Future<void> editBusiness(Business business) async {
     //Send Api call to server for edit
     final response = await http.put(
-      Uri.parse(
-          'https://balti-api.herokuapp.com/api/businesses/${business.id}'),
+      Uri.parse('localhost:3000/api/businesses/${business.id}'),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "user": business.ownerId,
@@ -111,8 +125,8 @@ class Businesses with ChangeNotifier {
 
   Future<void> deleteBusiness(String id) async {
     //Send Api call to server for delete
-    final response = await http.delete(
-        Uri.parse('https://balti-api.herokuapp.com/api/businesses/$id'));
+    final response =
+        await http.delete(Uri.parse('localhost:3000/api/businesses/$id'));
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
@@ -129,8 +143,7 @@ class Businesses with ChangeNotifier {
 
   Future<void> getAllBusinesses() async {
     //Send Api call to server for delete
-    final response = await http
-        .get(Uri.parse('https://balti-api.herokuapp.com/api/businesses'));
+    final response = await http.get(Uri.parse('localhost:3000/api/businesses'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,

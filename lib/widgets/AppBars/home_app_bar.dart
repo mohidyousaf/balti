@@ -116,7 +116,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
             Navigator.push<void>(
               context,
               MaterialPageRoute<void>(
-                builder: (BuildContext context) => const SellerDashboard(userId: '',),
+                builder: (BuildContext context) => const SellerDashboard(
+                  userId: "63d134f3ae6ba6c5e178e3ca",
+                ),
               ),
             );
           },

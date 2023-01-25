@@ -31,8 +31,8 @@ class Products with ChangeNotifier {
 
   Future<void> findByBusinessId(String id) async {
     products = [];
-    final response = await http.get(Uri.parse(
-        'https://balti-api.herokuapp.com/api/businesses/listProducts/$id'));
+    final response = await http
+        .get(Uri.parse('localhost:3000/api/businesses/listProducts/$id'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
@@ -66,7 +66,7 @@ class Products with ChangeNotifier {
       "videos": product.videos,
     });
     final response = await http.post(
-      Uri.parse('https://balti-api.herokuapp.com/api/products'),
+      Uri.parse('localhost:3000/api/products'),
       headers: {"Content-Type": "application/json"},
       body: bod,
     );
@@ -98,7 +98,7 @@ class Products with ChangeNotifier {
       "videos": product.videos,
     });
     final response = await http.put(
-      Uri.parse('https://balti-api.herokuapp.com/api/products/${product.id}'),
+      Uri.parse('localhost:3000/api/products/${product.id}'),
       headers: {"Content-Type": "application/json"},
       body: bod,
     );
@@ -117,8 +117,8 @@ class Products with ChangeNotifier {
 
   Future<void> deleteProduct(String id) async {
     //Send Api call to server for delete
-    final response = await http
-        .delete(Uri.parse('https://balti-api.herokuapp.com/api/products/$id'));
+    final response =
+        await http.delete(Uri.parse('localhost:3000/api/products/$id'));
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.

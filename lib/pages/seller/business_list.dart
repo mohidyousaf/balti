@@ -63,8 +63,8 @@ class _BusinessListState extends State<BusinessList> {
       body: Padding(
           padding: EdgeInsets.only(
             bottom: mediaQuery.size.width * 0.05,
-            right: mediaQuery.size.width * 0.06,
-            left: mediaQuery.size.width * 0.06,
+            // right: mediaQuery.size.width * 0.06,
+            // left: mediaQuery.size.width * 0.06,
           ),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -203,8 +203,7 @@ class _BusinessListState extends State<BusinessList> {
                                           ))
                                       .toList(),
                                 ));
-                    }
-                    else {
+                    } else {
                       return const Center(
                         child: CircularProgressIndicator(),
                       );

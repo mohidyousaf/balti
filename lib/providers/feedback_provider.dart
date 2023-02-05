@@ -43,8 +43,8 @@ class FeedbackItems with ChangeNotifier {
 
   Future<void> getFeedbackOfBusiness(String id) async {
     businessFeedback = [];
-    final response =
-        await http.get(Uri.parse('localhost:3000/api/feedbacks/$id/bus'));
+    final response = await http
+        .get(Uri.parse('https://balti.herokuapp.com/api/feedbacks/$id/bus'));
 
     print("********************");
     var jsonResponse = jsonDecode(response.body);
@@ -67,8 +67,8 @@ class FeedbackItems with ChangeNotifier {
 
   Future<void> getFeedbackOfProduct(String id) async {
     productFeedback = [];
-    final response =
-        await http.get(Uri.parse('localhost:3000/api/feedbacks/$id/prod'));
+    final response = await http
+        .get(Uri.parse('https://balti.herokuapp.com/api/feedbacks/$id/prod'));
 
     print("********************");
     var jsonResponse = jsonDecode(response.body);

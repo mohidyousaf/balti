@@ -2,10 +2,12 @@ import 'package:balti_app/providers/location_provider.dart';
 import 'package:balti_app/widgets/AppBars/user_app_bar.dart';
 import 'package:balti_app/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 import 'dart:math' as math;
 
 import '../../../widgets/product_card.dart';
+import '../../providers/cart_provider.dart';
 import '../restaurant_card.dart';
 import '../../models/business.dart';
 import '../../models/product.dart';
@@ -30,10 +32,10 @@ class _CheckoutState extends State<Checkout> {
       Duration.zero,
       () async {
         await Provider.of<Location>(context, listen: false).setLocation();
-        if (mounted) {
-          await Provider.of<Products>(context, listen: false)
-              .fetchAndSetProducts();
-        }
+        // if (mounted) {
+        //   await Provider.of<UserCart>(context, listen: false)
+        //       .cartProducts;
+        // }
       },
     );
   }
@@ -48,9 +50,17 @@ class _CheckoutState extends State<Checkout> {
     MediaQueryData mediaQuery = MediaQuery.of(context);
     double lat = Provider.of<Location>(context).latitude;
     double lng = Provider.of<Location>(context).longitude;
-    List<Product> products = Provider.of<Products>(
+    List<Product> products = Provider.of<UserCart>(
       context,
-    ).products;
+    ).cartProducts;
+    List<Map<String, String>> productQuantity = Provider.of<UserCart>(
+      context,
+    ).prodQuantity;
+    var log = Logger();
+    log.wtf(products[0].id);
+    log.wtf(productQuantity.firstWhere(
+        (element) => element['productId'] == products[0].id)['quantity']);
+
     TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
@@ -63,7 +73,9 @@ class _CheckoutState extends State<Checkout> {
               icon: const Icon(Icons.arrow_back_ios),
               color: Colors.black,
               iconSize: mediaQuery.size.width * 0.08,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ),
           actions: [
@@ -178,15 +190,16 @@ class _CheckoutState extends State<Checkout> {
           ElevatedButton(
             onPressed: () => {},
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                  Color.fromRGBO(27, 209, 161, 1)),
-              fixedSize: MaterialStateProperty.all(Size(
-                  mediaQuery.size.height * 0.04, mediaQuery.size.height * 0.07)),
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              )),
-              padding: MaterialStateProperty.all(EdgeInsets.all(mediaQuery.size.width*0.005))
-            ),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    Color.fromRGBO(27, 209, 161, 1)),
+                fixedSize: MaterialStateProperty.all(Size(
+                    mediaQuery.size.height * 0.04,
+                    mediaQuery.size.height * 0.07)),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                )),
+                padding: MaterialStateProperty.all(
+                    EdgeInsets.all(mediaQuery.size.width * 0.005))),
             child: Center(
               child: Column(
                 children: [
@@ -303,7 +316,8 @@ class _CheckoutState extends State<Checkout> {
                                                       mediaQuery.size.width *
                                                           0.03,
                                                   fontWeight: FontWeight.bold)),
-                                          Text("quantity",
+                                          Text(
+                                              '${productQuantity.firstWhere((element) => element['productId'] == data.id)['quantity']}',
                                               style: TextStyle(
                                                   letterSpacing: 0.08,
                                                   fontSize:
@@ -324,9 +338,8 @@ class _CheckoutState extends State<Checkout> {
             ),
             elevation: 10.0,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-              side: const BorderSide(color: Colors.black,width: 1)
-            ),
+                borderRadius: BorderRadius.circular(20),
+                side: const BorderSide(color: Colors.black, width: 1)),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Row(children: [

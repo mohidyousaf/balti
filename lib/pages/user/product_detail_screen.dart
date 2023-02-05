@@ -1,5 +1,8 @@
+import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:balti_app/models/cart.dart';
+import 'package:balti_app/providers/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -8,20 +11,34 @@ import '../../providers/location_provider.dart';
 import '../../utils/size_config.dart';
 import '../../widgets/custom_icon_button.dart';
 import 'map_screen.dart';
+import 'package:logger/logger.dart';
+
+var log = Logger();
 
 class ProductDetailScreen extends StatefulWidget {
-  const ProductDetailScreen({Key? key}) : super(key: key);
+  const ProductDetailScreen(
+      {Key? key,
+      required this.productName,
+      required this.price,
+      required this.images,
+      required this.userId,
+      required this.businessId,
+      required this.productId})
+      : super(key: key);
+
+  final List<String> images;
+  final String productName;
+  final double price;
+
+  final String userId;
+  final String businessId;
+  final String productId;
 
   @override
   State<ProductDetailScreen> createState() => _ProductDetailScreenState();
 }
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
-  final List<String> images = [
-    'assets/images/burger.jpg',
-    'assets/images/roll.jpg',
-    'assets/images/tacos.jpg',
-  ];
   @override
   void dispose() {
     super.dispose();
@@ -109,7 +126,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             children: [
               //Replace with owl carousel
               CarouselSlider(
-                items: images
+                items: widget.images
                     .map(
                       (imagePath) => Container(
                         margin: EdgeInsets.symmetric(
@@ -120,7 +137,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage(
+                            image: NetworkImage(
                               imagePath,
                             ),
                             fit: BoxFit.cover,
@@ -138,8 +155,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 padding: EdgeInsets.symmetric(
                   horizontal: SizeConfig.screenWidth / 24,
                 ),
-                child: const Text(
-                  "Burger And Fries",
+                child: Text(
+                  widget.productName,
                   overflow: TextOverflow.fade,
                   softWrap: false,
                   style: TextStyle(
@@ -156,8 +173,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "PKR 599",
+                    Text(
+                      widget.price.toString(),
                       style: TextStyle(
                         color: Color.fromARGB(255, 47, 148, 104),
                         fontWeight: FontWeight.w700,
@@ -260,7 +277,23 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 child: CustomIconButton(
                   color: const Color.fromARGB(193, 27, 209, 161),
                   buttonLabel: "Add to Cart",
-                  onPressHandler: () async {},
+                  onPressHandler: () async {
+                    log.i("here");
+                    var createdCart =
+                        await Provider.of<UserCart>(context, listen: false)
+                            .createCart(
+                                widget.userId,
+                                widget.businessId,
+                                widget.productId,
+                                itemCount,
+                                widget.price,
+                                widget.images,
+                                widget.productName);
+
+                    log.i(createdCart);
+                    log.i("here");
+                    Navigator.pop(context);
+                  },
                 ),
               ),
             ],

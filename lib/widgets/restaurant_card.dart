@@ -39,7 +39,7 @@ class RestaurantCard extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
-              child: Image.asset(
+              child: Image.network(
                 imagePath,
                 colorBlendMode: BlendMode.dstATop,
                 color: Colors.white.withOpacity(0.9),

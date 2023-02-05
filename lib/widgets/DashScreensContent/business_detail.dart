@@ -31,7 +31,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
       }
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -50,23 +50,25 @@ class _BusinessDetailState extends State<BusinessDetail> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                    height: mediaQuery.size.height*0.28,
-                    width: mediaQuery.size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image.asset(
-                        products[4].imageUrl,
-                        colorBlendMode: BlendMode.dstATop,
-                        color: Colors.white.withOpacity(0.9),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                height: mediaQuery.size.height * 0.28,
+                width: mediaQuery.size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16.0),
+                  child: Image.asset(
+                    products[4].imageUrl,
+                    colorBlendMode: BlendMode.dstATop,
+                    color: Colors.white.withOpacity(0.9),
+                    fit: BoxFit.cover,
                   ),
+                ),
+              ),
               Padding(
-                padding: EdgeInsets.only(left: SizeConfig.screenWidth / 24, top: SizeConfig.screenHeight / 72.5),
+                padding: EdgeInsets.only(
+                    left: SizeConfig.screenWidth / 24,
+                    top: SizeConfig.screenHeight / 72.5),
                 child: Text(
                   businesses[1].name,
                   style: TextStyle(
@@ -98,10 +100,14 @@ class _BusinessDetailState extends State<BusinessDetail> {
                   itemBuilder: (BuildContext ctx, int i) {
                     return ProductCard(
                       productName: products[i].name,
-                      price: products[i].price.toInt().toString(),
+                      price: products[i].price,
                       delay: '${products[i].duration.toInt()} min',
                       isFav: false,
                       imageUrl: products[i].imageUrl,
+                      images: [products[i].imageUrl],
+                      userId: " widget.userId",
+                      businessId: "widget.businessId",
+                      productId: "products[i].id",
                     );
                   },
                 ),

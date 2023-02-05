@@ -4,20 +4,28 @@ import 'package:flutter/material.dart';
 import '../utils/size_config.dart';
 
 class ProductCard extends StatefulWidget {
-  const ProductCard({
-    Key? key,
-    required this.productName,
-    required this.imageUrl,
-    required this.delay,
-    required this.price,
-    required this.isFav,
-  }) : super(key: key);
+  const ProductCard(
+      {Key? key,
+      required this.productName,
+      required this.imageUrl,
+      required this.delay,
+      required this.price,
+      required this.isFav,
+      required this.images,
+      required this.userId,
+      required this.businessId,
+      required this.productId})
+      : super(key: key);
 
   final String productName;
   final String delay;
   final String imageUrl;
-  final String price;
+  final double price;
   final bool isFav;
+  final List<String> images;
+  final String userId;
+  final String businessId;
+  final String productId;
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -29,10 +37,17 @@ class _ProductCardState extends State<ProductCard> {
     SizeConfig().init(context);
     return GestureDetector(
       onTap: () {
-        Navigator.push<void>(
+        Navigator.push(
           context,
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => const ProductDetailScreen(),
+          MaterialPageRoute(
+            builder: (context) => ProductDetailScreen(
+              productName: widget.productName,
+              price: widget.price,
+              images: widget.images,
+              userId: widget.userId,
+              businessId: widget.businessId,
+              productId: widget.productId,
+            ),
           ),
         );
       },
@@ -57,14 +72,13 @@ class _ProductCardState extends State<ProductCard> {
                         color: Colors.blue,
                       ),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16.0),
-                        child: Image.asset(
-                          widget.imageUrl,
-                          colorBlendMode: BlendMode.dstATop,
-                          color: Colors.white.withOpacity(0.9),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                          borderRadius: BorderRadius.circular(16.0),
+                          child: Image.network(
+                            widget.imageUrl,
+                            colorBlendMode: BlendMode.dstATop,
+                            color: Colors.white.withOpacity(0.9),
+                            fit: BoxFit.cover,
+                          )),
                     ),
                     Positioned(
                       top: SizeConfig.screenHeight / 48.3333,

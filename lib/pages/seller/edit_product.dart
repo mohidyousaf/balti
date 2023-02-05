@@ -35,8 +35,8 @@ class _EditProductState extends State<EditProduct> {
 
   File? imageFile;
   late List<File> files = [];
-  late List<dynamic> images = [];
-  late List<dynamic> videos = [];
+  late List<String> images = [];
+  late List<String> videos = [];
   late int currentPos = 0;
 
   bool isImage(String? path) {

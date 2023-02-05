@@ -33,7 +33,7 @@ class NetworkHandler {
 
   Future<http.Response> patch(String url, Map<String, String> body) async {
     url = formatter(url);
-    String? token = await storage.read(key: 'token');
+    // String? token = await storage.read(key: 'token');
     var response = await http.patch(Uri.parse(url),
         headers: {"Content-type": "application/json"}, body: json.encode(body));
 

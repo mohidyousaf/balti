@@ -41,7 +41,7 @@ class Business {
           "default", // hardcoded for now, to be changed when backend is fixed
       description: json['description'] ?? "default",
       imageUrl:
-          "assets/images/subway.png", // hardcoded for now, to be changed when backend is fixed
+          "https://balti-files.s3.ap-northeast-1.amazonaws.com/burger.jpg", // hardcoded for now, to be changed when backend is fixed
       rating: json['overallRating'].toDouble() ?? "default",
       deliveryCharges: json['delivery_charges'] ?? 0,
       locationDescription: "locationDesc",

@@ -23,11 +23,9 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
   void initState() {
     super.initState();
     Future.delayed(Duration.zero, () async {
-      await Provider.of<Businesses>(context, listen: false)
-          .fetchAndSetBusinesses();
+      await Provider.of<Businesses>(context, listen: false).getAllBusinesses();
       if (mounted) {
-        await Provider.of<Products>(context, listen: false)
-            .fetchAndSetProducts();
+        await Provider.of<Products>(context, listen: false).findAllProducts();
       }
     });
   }
@@ -114,10 +112,15 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                 itemBuilder: (BuildContext ctx, int i) {
                   return ProductCard(
                     productName: products[i].name,
-                    price: products[i].price.toInt().toString(),
+                    price: products[i].price,
                     delay: '${products[i].duration.toInt()} min',
                     isFav: false,
-                    imageUrl: products[i].imageUrl,
+                    imageUrl:
+                        products[i].images[0] ?? 'assets/images/food_1.jpeg',
+                    images: products[i].images,
+                    userId: "6366d044318d92caf93e8c92",
+                    businessId: products[i].businessId,
+                    productId: products[i].id,
                   );
                 },
               ),

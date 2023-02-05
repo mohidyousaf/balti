@@ -136,8 +136,7 @@ class _BusinessListState extends State<BusinessList> {
                                                             BorderRadius
                                                                 .circular(10.0),
                                                         child: Image.network(
-                                                          data.imageUrl
-                                                              .toString(),
+                                                          data.imageUrl,
                                                           // width: mediaQuery.size.width * 0.2,
                                                           // height: mediaQuery.size.height * 0.1,
                                                           fit: BoxFit.cover,

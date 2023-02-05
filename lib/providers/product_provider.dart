@@ -1,10 +1,17 @@
 // ignore: file_names
 import 'dart:convert';
+import 'package:balti_app/models/business.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import 'package:objectid/objectid.dart';
-
+import 'package:logger/logger.dart';
 import '../models/product.dart';
+
+import '../repository/networkHandler.dart';
+
+var nw = NetworkHandler();
+
+var log = Logger();
 
 class Products with ChangeNotifier {
   final String authToken;
@@ -30,18 +37,29 @@ class Products with ChangeNotifier {
   }
 
   Future<void> findByBusinessId(String id) async {
+    print({id});
     products = [];
-    final response = await http
-        .get(Uri.parse('localhost:3000/api/businesses/listProducts/$id'));
 
-    if (response.statusCode == 200) {
+    dynamic response;
+    try {
+      response = await nw.get("businesses/listProducts/$id");
+    } catch (e) {
+      debugPrint('debug: $e');
+    }
+
+    // log.i(response);
+
+    if (response.length > 0) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      var jsonResponse = jsonDecode(response.body);
-      for (var i = 0; i < jsonResponse.length; i = i + 1) {
+      for (var i = 0; i < response.length; i = i + 1) {
         print("********************");
-        print(jsonResponse[i]);
-        products.add(Product.fromJson(jsonResponse[i]));
+        // log.i(response[i]);
+        try {
+          products.add(Product.fromJson(response[i]));
+        } catch (e) {
+          debugPrint('debug: $e');
+        }
       }
       // return businesses.firstWhere((bus) => bus.id == id);
     } else {
@@ -49,6 +67,7 @@ class Products with ChangeNotifier {
       // then throw an exception.
       throw Exception('Failed to load album');
     }
+    log.i(products);
     notifyListeners();
     // return products.where((prod) => prod.businessId == id).toList();
   }
@@ -66,7 +85,7 @@ class Products with ChangeNotifier {
       "videos": product.videos,
     });
     final response = await http.post(
-      Uri.parse('localhost:3000/api/products'),
+      Uri.parse('https://balti.herokuapp.com/api/products'),
       headers: {"Content-Type": "application/json"},
       body: bod,
     );
@@ -98,7 +117,7 @@ class Products with ChangeNotifier {
       "videos": product.videos,
     });
     final response = await http.put(
-      Uri.parse('localhost:3000/api/products/${product.id}'),
+      Uri.parse('https://balti.herokuapp.com/api/products/${product.id}'),
       headers: {"Content-Type": "application/json"},
       body: bod,
     );
@@ -117,8 +136,8 @@ class Products with ChangeNotifier {
 
   Future<void> deleteProduct(String id) async {
     //Send Api call to server for delete
-    final response =
-        await http.delete(Uri.parse('localhost:3000/api/products/$id'));
+    final response = await http
+        .delete(Uri.parse('https://balti.herokuapp.com/api/products/$id'));
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
@@ -129,6 +148,24 @@ class Products with ChangeNotifier {
       // If the server did not return a 201 CREATED response,
       // then throw an exception.
       throw Exception('Failed to edit business.');
+    }
+    notifyListeners();
+  }
+
+  Future<void> findAllProducts() async {
+    final response =
+        await http.get(Uri.parse('https://balti.herokuapp.com/api/products'));
+
+    if (response.statusCode == 200) {
+      print(jsonDecode(response.body));
+      var jsonResponse = jsonDecode(response.body);
+      for (var i = 0; i < jsonResponse.length; i = i + 1) {
+        print("********************");
+        // print(jsonResponse[i]);
+        products.add(Product.fromJson(jsonResponse[i]));
+      }
+    } else {
+      throw Exception('Failed to load album');
     }
     notifyListeners();
   }

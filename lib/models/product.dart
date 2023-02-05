@@ -9,8 +9,8 @@ class Product with ChangeNotifier {
   final double rating;
   final double duration;
   final String imageUrl;
-  final List<dynamic> images;
-  final List<dynamic> videos;
+  final List<String> images;
+  final List<String> videos;
   bool isFav;
 
   Product({
@@ -37,18 +37,18 @@ class Product with ChangeNotifier {
       id: json['_id'],
       name: json['name'],
       businessId: json['business_id'],
-      description: json['description'],
-      price: json['price']!=null?json['price'].toDouble():0,
-      duration: json['duration']!=null?json['duration'].toDouble():0,
+      description: json['description'] ?? "",
+      price: json['price'] != null ? json['price'].toDouble() : 0,
+      duration: json['duration'] != null ? json['duration'].toDouble() : 0,
       imageUrl:
           "assets/images/subway.png", // hardcoded for now, to be changed when backend is fixed
-      rating: json['rating']!=null?json['rating'].toDouble():0,
-      images: json['images'],
-      videos: json['videos'],
+      rating: json['rating'] != null ? json['rating'].toDouble() : 0,
+      images: json['images'] != null ? List<String>.from(json['images']) : [],
+      videos: json['videos'] != null ? List<String>.from(json['videos']) : [],
     );
   }
 
   // static Map<String, dynamic> Product.toJson (Product p) {
-    
+
   // };
 }

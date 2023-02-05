@@ -2,8 +2,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
-import '../repository/networkHandler.dart';
+
 import '../models/business.dart';
+import '../repository/networkHandler.dart';
 
 var nw = NetworkHandler();
 
@@ -61,7 +62,7 @@ class Businesses with ChangeNotifier {
   Future<void> addBusiness(Business business) async {
     //Send Api call to server for add
     final response = await http.post(
-      Uri.parse('localhost:3000/api/businesses'),
+      Uri.parse('https://balti.herokuapp.com/api/businesses'),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "user": business.ownerId,
@@ -93,7 +94,7 @@ class Businesses with ChangeNotifier {
   Future<void> editBusiness(Business business) async {
     //Send Api call to server for edit
     final response = await http.put(
-      Uri.parse('localhost:3000/api/businesses/${business.id}'),
+      Uri.parse('https://balti.herokuapp.com/api/businesses/${business.id}'),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "user": business.ownerId,
@@ -125,8 +126,8 @@ class Businesses with ChangeNotifier {
 
   Future<void> deleteBusiness(String id) async {
     //Send Api call to server for delete
-    final response =
-        await http.delete(Uri.parse('localhost:3000/api/businesses/$id'));
+    final response = await http
+        .delete(Uri.parse('https://balti.herokuapp.com/api/businesses/$id'));
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
@@ -143,31 +144,18 @@ class Businesses with ChangeNotifier {
 
   Future<void> getAllBusinesses() async {
     //Send Api call to server for delete
-    final response = await http.get(Uri.parse('localhost:3000/api/businesses'));
+    final response =
+        await http.get(Uri.parse('https://balti.herokuapp.com/api/businesses'));
 
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
       print(jsonDecode(response.body));
       var jsonResponse = jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i = i + 1) {
         print("********************");
-        print(jsonResponse[i]);
+        // print(jsonResponse[i]);
         businesses.add(Business.fromJson(jsonResponse[i]));
       }
-      // return Business(
-      //     id: id,
-      //     ownerId: jsonResponse.userId,
-      //     name: jsonResponse.name,
-      //     type: jsonResponse.type,
-      //     lat: jsonResponse.lat,
-      //     lng: jsonResponse.lng,
-      //     description: jsonResponse.description,
-      //     imageUrl: jsonResponse.imageUrl,
-      //     rating: jsonResponse.rating);
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
       throw Exception('Failed to load album');
     }
     notifyListeners();

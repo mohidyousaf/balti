@@ -10,6 +10,7 @@ import '../../providers/product_provider.dart';
 import '../../utils/size_config.dart';
 import '../../widgets/product_card.dart';
 import 'edit_product.dart';
+import 'dart:developer' as developer;
 
 class ProductList extends StatefulWidget {
   const ProductList({Key? key, required this.userId, required this.businessId})
@@ -43,6 +44,7 @@ class _ProductListState extends State<ProductList> {
     List<Product> products = Provider.of<Products>(
       context,
     ).products;
+    print(products);
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       appBar: PreferredSize(
@@ -122,10 +124,14 @@ class _ProductListState extends State<ProductList> {
                             },
                             child: ProductCard(
                               productName: products[i].name,
-                              price: products[i].price.toInt().toString(),
+                              price: products[i].price,
                               delay: '${products[i].duration.toInt()} min',
                               isFav: false,
-                              imageUrl: "products[i].images[0]",
+                              imageUrl: products[i].images[0],
+                              images: products[i].images,
+                              userId: widget.userId,
+                              businessId: widget.businessId,
+                              productId: products[i].id,
                             ),
                           );
                         },

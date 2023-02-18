@@ -190,8 +190,8 @@ class _OrderListState extends State<OrderList> {
                           OrderApproval(
                             userId: widget.userId,
                           )),
-                      orderTypeCard(mediaQuery, 'Scheduled Orders', 4, '1234',
-                          true, null),
+                      // orderTypeCard(mediaQuery, 'Scheduled Orders', 4, '1234',
+                      //     true, null),
                     ],
                   ),
                 ),

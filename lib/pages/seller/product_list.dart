@@ -43,7 +43,7 @@ class _ProductListState extends State<ProductList> {
     SizeConfig().init(context);
     List<Product> products = Provider.of<Products>(
       context,
-    ).products;
+    ).businessProducts;
     print(products);
     return Scaffold(
       backgroundColor: const Color(0xffffffff),

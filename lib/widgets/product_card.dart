@@ -1,7 +1,10 @@
 import 'package:balti_app/pages/user/product_detail_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 import '../utils/size_config.dart';
+
+var log = Logger();
 
 class ProductCard extends StatefulWidget {
   const ProductCard(
@@ -32,6 +35,7 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
+  bool isIcon = false;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -145,16 +149,36 @@ class _ProductCardState extends State<ProductCard> {
                     ),
                   ],
                 ),
-                IconButton(
-                  padding: EdgeInsets.zero,
-                  constraints: const BoxConstraints(),
-                  onPressed: () {},
-                  // ignore: prefer_const_constructors
-                  icon: Icon(
-                    size: 20,
-                    Icons.favorite_border_sharp,
-                  ),
-                ),
+                isIcon
+                    ? IconButton(
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(),
+                        onPressed: () {
+                          log.d(isIcon);
+                          setState(() {
+                            isIcon = !isIcon;
+                          });
+                        },
+                        // ignore: prefer_const_constructors
+                        icon: const Icon(
+                          size: 20,
+                          Icons.favorite,
+                          color: Color(0xffb74093),
+                        ))
+                    : IconButton(
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(),
+                        onPressed: () {
+                          log.d(isIcon);
+                          setState(() {
+                            isIcon = !isIcon;
+                          });
+                        },
+                        // ignore: prefer_const_constructors
+                        icon: const Icon(
+                          size: 20,
+                          Icons.favorite_border_sharp,
+                        ))
               ],
             ),
           ),

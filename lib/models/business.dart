@@ -1,3 +1,9 @@
+import 'dart:developer';
+
+import 'package:logger/logger.dart';
+
+var log = Logger();
+
 class Business {
   final String id;
   final String ownerId;
@@ -28,6 +34,7 @@ class Business {
   });
 
   factory Business.fromJson(Map<String, dynamic> json) {
+    log.d(json);
     return Business(
       id: json['_id'] ?? "1234555",
       ownerId: json['user'] ?? "default user id",
@@ -35,12 +42,12 @@ class Business {
       phoneNumber:
           "phoneNumber", // hardcoded for now, to be changed when backend is fixed
       type: json['type'] ?? "default",
-      lat: json['location']['coordinates'][0] ??
-          "default", // hardcoded for now, to be changed when backend is fixed
-      lng: json['location']['coordinates'][1] ??
-          "default", // hardcoded for now, to be changed when backend is fixed
+      lat: json['location']['coordinates'][0].toDouble() ??
+          1.0, // hardcoded for now, to be changed when backend is fixed
+      lng: json['location']['coordinates'][1].toDouble() ??
+          1.0, // hardcoded for now, to be changed when backend is fixed
       description: json['description'] ?? "default",
-      imageUrl:
+      imageUrl: json["image"] ??
           "https://balti-files.s3.ap-northeast-1.amazonaws.com/burger.jpg", // hardcoded for now, to be changed when backend is fixed
       rating: json['overallRating'].toDouble() ?? "default",
       deliveryCharges: json['delivery_charges'] ?? 0,

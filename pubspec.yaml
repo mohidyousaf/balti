@@ -49,6 +49,8 @@ dependencies:
   onesignal_flutter: ^3.3.0
   logger: ^1.1.0
   flutter_secure_storage: ^7.0.1
+  aws_s3: ^0.1.1+hotfix.5
+  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:

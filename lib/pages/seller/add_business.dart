@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:balti_app/models/business.dart';
+import 'package:balti_app/pages/seller/business_list.dart';
+import 'package:balti_app/widgets/DashScreensContent/business_detail.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -32,6 +34,7 @@ class _AddBusinessState extends State<AddBusiness> {
   final ntnController = TextEditingController();
 
   File? imageFile;
+  String filepath = "";
 
   _getFromGallery() async {
     XFile? pickedFile = await ImagePicker().pickImage(
@@ -43,6 +46,7 @@ class _AddBusinessState extends State<AddBusiness> {
       setState(() {
         print("*********************");
         print(pickedFile.path);
+        filepath = pickedFile.path;
         imageFile = File(pickedFile.path);
       });
     }
@@ -230,15 +234,16 @@ class _AddBusinessState extends State<AddBusiness> {
                                   lat: 1,
                                   lng: 1,
                                   description: descriptionController.text,
-                                  imageUrl: "imageURL",
+                                  imageUrl: filepath,
                                   rating: 0,
                                   deliveryCharges: 0,
                                   locationDescription: addressController.text));
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => const ProductList()),
-                          // );
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      BusinessList(userId: widget.userId)));
                         }
                       },
                     ),

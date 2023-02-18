@@ -2,6 +2,8 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:balti_app/models/product.dart';
+import 'package:balti_app/pages/seller/business_list.dart';
+import 'package:balti_app/pages/seller/product_list.dart';
 import 'package:balti_app/widgets/video_builder.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -308,7 +310,7 @@ class _AddProductState extends State<AddProduct> {
                           print(
                               "****************  FORM KEY VALIDATED  ***************");
                           print(widget.businessId);
-                          await Provider.of<Products>(context, listen: false)
+                          Provider.of<Products>(context, listen: false)
                               .addProduct(Product(
                                   id: " ",
                                   name: nameController.text,
@@ -321,7 +323,11 @@ class _AddProductState extends State<AddProduct> {
                                   imageUrl: "assets/images/burger.jpg",
                                   images: images,
                                   videos: videos));
-                          // Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      BusinessList(userId: widget.userId)));
                         }
                       },
                     ),

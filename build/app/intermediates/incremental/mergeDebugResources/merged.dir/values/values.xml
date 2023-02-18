@@ -97,6 +97,7 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <color name="sign_in_separator_color">#DDDDDD</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -220,6 +221,10 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="sign_in_button_height">40dp</dimen>
+    <dimen name="sign_in_button_margin">10dp</dimen>
+    <dimen name="sign_in_button_width">240dp</dimen>
+    <dimen name="sign_in_separator_height">2dp</dimen>
     <dimen name="subtitle_corner_radius">2dp</dimen>
     <dimen name="subtitle_outline_width">2dp</dimen>
     <dimen name="subtitle_shadow_offset">2dp</dimen>
@@ -232,6 +237,11 @@
     <dimen name="tooltip_vertical_padding">6.5dp</dimen>
     <dimen name="tooltip_y_offset_non_touch">0dp</dimen>
     <dimen name="tooltip_y_offset_touch">16dp</dimen>
+    <dimen name="user_pools_button_height">45dp</dimen>
+    <dimen name="user_pools_button_text_size">20sp</dimen>
+    <dimen name="user_pools_form_margin">20dp</dimen>
+    <dimen name="user_pools_intra_group_separation">10dp</dimen>
+    <dimen name="user_pools_sign_in_button_margin_top_bottom">10dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="accessibility_action_clickable_span" type="id"/>
@@ -297,6 +307,7 @@
     <item name="text2" type="id"/>
     <item name="title" type="id"/>
     <item name="up" type="id"/>
+    <item name="user_pool_sign_in_view_id" type="id"/>
     <id name="view_tree_lifecycle_owner"/>
     <id name="view_tree_saved_state_registry_owner"/>
     <id name="view_tree_view_model_store_owner"/>
@@ -354,6 +365,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
+    <string name="email_address_text">Email address</string>
     <string name="exo_download_completed">Download completed</string>
     <string name="exo_download_description">Download</string>
     <string name="exo_download_downloading">Downloading</string>
@@ -367,17 +379,73 @@
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
     <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
+    <string name="force_change_password_body">The password on the account must be changed to continue</string>
+    <string name="force_change_password_button_hint">Set password</string>
+    <string name="force_change_password_header">Please set a new password</string>
+    <string name="forgot_password_body">Set your new password with the verification code that was sent to you.</string>
+    <string name="forgot_password_button_hint">Set password</string>
+    <string name="forgot_password_header">Forgot your password?</string>
+    <string name="forgot_password_input_code_hint">Verification code</string>
+    <string name="given_name_text">Given name</string>
+    <string name="incorrect_username_or_password">The provided username or password is incorrect.</string>
     <string name="location_permission_missing_message">Looks like this app doesn\'t have location services configured. Please see OneSignal docs for more information.</string>
     <string name="location_permission_missing_title">App Missing Permission</string>
     <string name="location_permission_name_for_title">Location</string>
     <string name="location_permission_settings_message">sharing your device location</string>
+    <string name="login_failed">Login failed.</string>
+    <string name="mfa_code_empty">MFA Code is empty.</string>
+    <string name="mfa_code_sent_message">Code sent.</string>
+    <string name="mfa_failed">MFA Failed.</string>
+    <string name="mfa_header">MFA verification is required to authenticate.</string>
     <string name="notification_permission_name_for_title">Notifications</string>
     <string name="notification_permission_settings_message">Notifications</string>
+    <string name="package_name">mobile_client</string>
+    <string name="password_change_failed">Password change failed.</string>
+    <string name="password_change_no_verification_failed">Cannot reset password without registered/verified email or phone number</string>
+    <string name="password_change_success">Password change succeeded.</string>
+    <string name="password_length_validation_failed">Password should have 6 or more characters.</string>
     <string name="permission_not_available_message">You have previously denied %s. Please go to settings to enable.</string>
     <string name="permission_not_available_open_settings_option">Settings</string>
     <string name="permission_not_available_title">%s Not Available</string>
+    <string name="phone_number_text">Phone number (+15551234567)</string>
+    <string name="please_wait">Please wait</string>
     <string name="search_menu_title">Search</string>
+    <string name="sign_in_button_text">Sign In</string>
+    <string name="sign_in_canceled_message_format">"Sign-in with %s canceled."</string>
+    <string name="sign_in_failure_message_format">Sign-in with %1$s failed.\n%2$s</string>
+    <string name="sign_in_forgot_password">Forgot Your Password?</string>
+    <string name="sign_in_hide_password">hide</string>
+    <string name="sign_in_new_account">Create New Account</string>
+    <string name="sign_in_or">or sign in with</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in_show_password">show</string>
+    <string name="sign_in_succeeded_message_format">"Sign-in with %s succeeded."</string>
+    <string name="sign_in_username">User Name / Phone # (+1555…)</string>
+    <string name="sign_in_with">Sign in with</string>
+    <string name="sign_up_confirm_code">Confirmation code</string>
+    <string name="sign_up_confirm_code_missing">Sign Up Confirmation code is missing.</string>
+    <string name="sign_up_confirm_code_sent">A confirmation code was sent to</string>
+    <string name="sign_up_confirm_enter_code">Please enter the code below to confirm your account.</string>
+    <string name="sign_up_confirm_failed">Sign up confirmation failed.</string>
+    <string name="sign_up_confirm_success">Sign up confirmation succeeded.</string>
+    <string name="sign_up_confirm_text">Confirm</string>
+    <string name="sign_up_confirm_title">Confirm your account</string>
+    <string name="sign_up_failed">Sign up failed.</string>
+    <string name="sign_up_header">Enter your information to sign up.</string>
+    <string name="sign_up_in_progress">Sign up in progress</string>
+    <string name="sign_up_success">Sign up succeeded.</string>
+    <string name="sign_up_username_missing">Missing username.</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="title_activity_force_change_password">Force Change Password</string>
+    <string name="title_activity_forgot_password">Forgot Password</string>
+    <string name="title_activity_mfa">MFA Code</string>
+    <string name="title_activity_sign_in">Sign-in</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_sign_up_confirm">Confirm Account</string>
+    <string name="title_dialog_sign_up_failed">Sign Up Failed</string>
+    <string name="user_does_not_exist">The provided username does not exist.</string>
+    <string name="username_text">Username</string>
+    <string name="verify_button_text">Verify</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -2653,6 +2721,10 @@
         <attr format="reference" name="listChoiceIndicatorMultipleAnimated"/>
 
     </declare-styleable>
+    <declare-styleable name="ButtonBarContainerTheme">
+         <attr format="reference" name="metaButtonBarStyle"/>
+         <attr format="reference" name="metaButtonBarButtonStyle"/>
+     </declare-styleable>
     <declare-styleable name="ButtonBarLayout">
         <!-- Whether to automatically stack the buttons when there is not
              enough space to lay them out side-by-side. -->
@@ -2901,6 +2973,9 @@
         <attr name="android:fontVariationSettings"/>
         <attr name="android:ttcIndex"/>
     </declare-styleable>
+    <declare-styleable name="ForgotPasswordView">
+          <attr format="integer" name="forgotPasswordViewBackgroundColor"/>
+      </declare-styleable>
     <declare-styleable name="Fragment">
         <attr name="android:name"/>
         <attr name="android:id"/>
@@ -3010,6 +3085,9 @@
 
 <attr format="boolean" name="circleCrop"/>
 </declare-styleable>
+    <declare-styleable name="MFAView">
+          <attr format="integer" name="mfaViewBackgroundColor"/>
+      </declare-styleable>
     <declare-styleable name="MapAttrs"><attr name="mapType">
 <enum name="none" value="0"/>
 
@@ -3310,25 +3388,38 @@
         <attr format="reference" name="submitBackground"/>
         <attr name="android:focusable"/>
     </declare-styleable>
-    <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
+    <declare-styleable name="SignInButton"><attr format="string" name="text"/><attr format="enum" name="button_style">
+             <enum name="large" value="0"/>
+             <enum name="small" value="1"/>
+         </attr><attr format="reference" name="buttonSize">
 <enum name="standard" value="0"/>
 
 <enum name="wide" value="1"/>
 
 <enum name="icon_only" value="2"/>
 
-</attr>
-<attr format="reference" name="colorScheme">
+</attr><attr format="reference" name="colorScheme">
 <enum name="dark" value="0"/>
 
 <enum name="light" value="1"/>
 
 <enum name="auto" value="2"/>
 
-</attr>
-
-<attr format="reference|string" name="scopeUris"/>
-</declare-styleable>
+</attr><attr format="reference|string" name="scopeUris"/></declare-styleable>
+    <declare-styleable name="SignInView">
+        <attr format="integer" name="signInBackgroundColor">
+            @android:color/darker_gray
+        </attr>
+        <attr format="integer" name="signInImageResId">
+            @drawable/default_sign_in_logo
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SignUpConfirmView">
+          <attr format="integer" name="signUpConfirmViewBackgroundColor"/>
+      </declare-styleable>
+    <declare-styleable name="SignUpView">
+          <attr format="integer" name="signUpViewBackgroundColor"/>
+      </declare-styleable>
     <declare-styleable name="Spinner">
         <!-- The prompt to display when the spinner's dialog is shown. -->
         <attr name="android:prompt"/>

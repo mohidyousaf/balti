@@ -12,6 +12,19 @@ import '../repository/networkHandler.dart';
 
 var nw = NetworkHandler();
 
+class ProdQuanity {
+  double price;
+  int quantity;
+  String productId;
+
+  ProdQuanity(
+      {required this.price, required this.quantity, required this.productId});
+
+  double get getPrice => price;
+  int get getquanity => quantity;
+  String get getProductId => productId;
+}
+
 class UserCart with ChangeNotifier {
   final String authToken;
   final String userId;
@@ -23,11 +36,22 @@ class UserCart with ChangeNotifier {
   });
   List<Product> cartProducts = [];
   String cartId = "";
-  List<Map<String, String>> prodQuantity = [];
+  List<ProdQuanity> prodQuantity = [];
   String totalPrice = "";
 
   List<Product> get getCartProducts {
     return [...cartProducts];
+  }
+
+  String get getUserId {
+    return userId;
+  }
+
+  double get getTotalPrice {
+    double total = 0;
+    total = prodQuantity.fold(
+        0, (total, element) => (element.getPrice * element.getquanity) + total);
+    return total;
   }
 
   Future<String> createCart(
@@ -40,6 +64,7 @@ class UserCart with ChangeNotifier {
       String productName) async {
     //Send Api call to server for add
     // create new cart item with current cart id
+
     if (cartId != "") {
       var body = {
         "products": [
@@ -52,9 +77,11 @@ class UserCart with ChangeNotifier {
 
       dynamic response;
       try {
-        log.d('https://balti.herokuapp.com/api/cart/$cartId');
+        log.d(
+            'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/cart/$cartId');
         response = await http.put(
-          Uri.parse('https://balti.herokuapp.com/api/cart/$cartId'),
+          Uri.parse(
+              'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/cart/$cartId'),
           headers: {"Content-Type": "application/json"},
           body: json.encode(body),
         );
@@ -75,11 +102,8 @@ class UserCart with ChangeNotifier {
           "images": images,
         };
 
-        prodQuantity.add({
-          "productId": productId,
-          "quantity": quantity.toString(),
-          "price": price.toString()
-        });
+        prodQuantity.add(ProdQuanity(
+            price: price, quantity: quantity, productId: productId));
         Product newProduct = Product.fromJson(product);
         cartProducts.add(newProduct);
       }
@@ -98,7 +122,8 @@ class UserCart with ChangeNotifier {
       dynamic response;
       try {
         response = await http.post(
-          Uri.parse('https://balti.herokuapp.com/api/cart'),
+          Uri.parse(
+              'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/cart'),
           headers: {"Content-Type": "application/json"},
           body: json.encode(body),
         );
@@ -122,11 +147,8 @@ class UserCart with ChangeNotifier {
         Product newProduct = Product.fromJson(product);
         cartProducts.add(newProduct);
         cartId = cartCreated['cart']['_id'] ?? "";
-        prodQuantity.add({
-          "productId": productId,
-          "quantity": quantity.toString(),
-          "price": price.toString()
-        });
+        prodQuantity.add(ProdQuanity(
+            price: price, quantity: quantity, productId: productId));
       } else {
         // If the server did not return a 201 CREATED response,
         // then throw an exception.

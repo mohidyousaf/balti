@@ -23,6 +23,7 @@ class Products with ChangeNotifier {
   });
 
   List<Product> products = [];
+  List<Product> businessProducts = [];
 
   List<Product> get getProducts {
     return [...products];
@@ -38,7 +39,7 @@ class Products with ChangeNotifier {
 
   Future<void> findByBusinessId(String id) async {
     print({id});
-    products = [];
+    businessProducts = [];
 
     dynamic response;
     try {
@@ -56,7 +57,7 @@ class Products with ChangeNotifier {
         print("********************");
         // log.i(response[i]);
         try {
-          products.add(Product.fromJson(response[i]));
+          businessProducts.add(Product.fromJson(response[i]));
         } catch (e) {
           debugPrint('debug: $e');
         }
@@ -67,41 +68,32 @@ class Products with ChangeNotifier {
       // then throw an exception.
       throw Exception('Failed to load album');
     }
-    log.i(products);
+    log.i(businessProducts);
     notifyListeners();
     // return products.where((prod) => prod.businessId == id).toList();
   }
 
-  Future<Product> addProduct(Product product) async {
+  Future<String> addProduct(Product product) async {
     //Send Api call to server for add
-    var bod = jsonEncode({
+    Map<String, String> body = {
       "business_id": product.businessId,
       "name": product.name,
-      "price": product.price,
+      "price": product.price.toString(),
       "description": product.description,
       // "duration": product.duration,
       // "rating": 0,
-      "images": product.images,
-      "videos": product.videos,
-    });
-    final response = await http.post(
-      Uri.parse('https://balti.herokuapp.com/api/products'),
-      headers: {"Content-Type": "application/json"},
-      body: bod,
-    );
-    print(response.statusCode);
-    print(jsonDecode(response.body));
-    if (response.statusCode == 200) {
-      print("Product Created");
-      Product newProduct = Product.fromJson(jsonDecode(response.body));
-      products.add(newProduct);
-      return newProduct;
-      notifyListeners();
-    } else {
-      // If the server did not return a 201 CREATED response,
-      // then throw an exception.
-      throw Exception('Failed to create product.');
+      // "images": product.images,
+      // "videos": product.videos,
+    };
+
+    log.wtf(body);
+    dynamic response;
+    try {
+      response = await nw.postDataWithImages("products", product.images, body);
+    } catch (e) {
+      debugPrint('debug: $e');
     }
+    return response;
   }
 
   Future<void> editProduct(Product product) async {
@@ -117,7 +109,8 @@ class Products with ChangeNotifier {
       "videos": product.videos,
     });
     final response = await http.put(
-      Uri.parse('https://balti.herokuapp.com/api/products/${product.id}'),
+      Uri.parse(
+          'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/products/${product.id}'),
       headers: {"Content-Type": "application/json"},
       body: bod,
     );
@@ -136,8 +129,8 @@ class Products with ChangeNotifier {
 
   Future<void> deleteProduct(String id) async {
     //Send Api call to server for delete
-    final response = await http
-        .delete(Uri.parse('https://balti.herokuapp.com/api/products/$id'));
+    final response = await http.delete(Uri.parse(
+        'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/products/$id'));
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
@@ -153,8 +146,8 @@ class Products with ChangeNotifier {
   }
 
   Future<void> findAllProducts() async {
-    final response =
-        await http.get(Uri.parse('https://balti.herokuapp.com/api/products'));
+    final response = await http.get(Uri.parse(
+        'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/products'));
 
     if (response.statusCode == 200) {
       print(jsonDecode(response.body));

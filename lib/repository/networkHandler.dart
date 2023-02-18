@@ -6,7 +6,8 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
 class NetworkHandler {
-  String baseurl = 'https://balti.herokuapp.com/api/';
+  String baseurl =
+      'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/';
   var log = Logger();
   FlutterSecureStorage storage = FlutterSecureStorage();
 
@@ -37,22 +38,81 @@ class NetworkHandler {
     var response = await http.patch(Uri.parse(url),
         headers: {"Content-type": "application/json"}, body: json.encode(body));
 
+    log.wtf(response.statusCode);
+    return response;
+  }
+
+  Future<http.Response> put(String url, Map<String, String> body) async {
+    url = formatter(url);
+    // String token = await storage.read(key: 'token');
+    var response = await http.put(Uri.parse(url),
+        headers: {"Content-type": "application/json"}, body: json.encode(body));
+
     print(response);
     return response;
   }
 
-  Future<http.StreamedResponse> patchImage(String url, String filepath) async {
+  Future<String> postDataWithImage(
+      String url, String filepath, Map<String, String> body) async {
     url = formatter(url);
-    String? token = await storage.read(key: 'token');
-    var request = http.MultipartRequest('PATCH', Uri.parse(url));
-    request.files.add(await http.MultipartFile.fromPath("img", filepath));
-    request.headers.addAll({
-      "Content-type": "multipart/form-data",
-      "Authorization": "Bearer $token"
-    });
-    var response = request.send();
-    print(response);
-    return response;
+    log.d(url);
+    // String? token = await storage.read(key: 'token');
+    Map<String, String> headers = {"Content-type": "multipart/form-data"};
+    dynamic request;
+    try {
+      request = http.MultipartRequest('POST', Uri.parse(url))
+        ..headers.addAll(headers)
+        ..files.add(await http.MultipartFile.fromPath("img", filepath))
+        ..fields.addAll(body);
+    } catch (e) {
+      log.e(e);
+    }
+    log.d(request);
+
+    var response = await request.send();
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      log.i(response);
+      return "added";
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load album');
+    }
+  }
+
+  Future<String> postDataWithImages(
+      String url, List<String> filepath, Map<String, String> body) async {
+    url = formatter(url);
+    log.d(url);
+    // String? token = await storage.read(key: 'token');
+    Map<String, String> headers = {"Content-type": "multipart/form-data"};
+    dynamic request;
+    try {
+      request = http.MultipartRequest('POST', Uri.parse(url));
+      if (filepath.isNotEmpty) {
+        for (var i = 0; i < filepath.length; i++) {
+          request.files
+              .add(await http.MultipartFile.fromPath("img", filepath[i]));
+        }
+      }
+      request.headers.addAll(headers);
+      request.fields.addAll(body);
+    } catch (e) {
+      log.e(e);
+    }
+    log.d(request);
+
+    var response = await request.send();
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      log.i(response);
+      return "product added";
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load album');
+    }
   }
 
   String formatter(url) {

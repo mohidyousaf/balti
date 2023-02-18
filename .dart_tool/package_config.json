@@ -8,6 +8,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "aws_s3",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/aws_s3-0.1.1+hotfix.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
       "packageUri": "lib/",
@@ -254,6 +260,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.18.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
       "packageUri": "lib/",
@@ -440,7 +452,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-02-03T07:17:02.023113Z",
+  "generated": "2023-02-18T15:56:37.938901Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }

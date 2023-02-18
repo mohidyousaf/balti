@@ -1,4 +1,6 @@
+import 'package:balti_app/models/order.dart';
 import 'package:balti_app/providers/location_provider.dart';
+import 'package:balti_app/providers/order_provider.dart';
 import 'package:balti_app/widgets/AppBars/user_app_bar.dart';
 import 'package:balti_app/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +16,12 @@ import '../../models/product.dart';
 import '../../pages/user/map_screen.dart';
 import '../../providers/business_provider.dart';
 import '../../providers/product_provider.dart';
+import '../../providers/order_provider.dart';
 import '../../utils/size_config.dart';
 import '../custom_icon_button.dart';
+import '../../globals.dart' as globals;
+
+var log = Logger();
 
 class Checkout extends StatefulWidget {
   const Checkout({Key? key}) : super(key: key);
@@ -31,10 +37,10 @@ class _CheckoutState extends State<Checkout> {
     Future.delayed(
       Duration.zero,
       () async {
-        await Provider.of<Location>(context, listen: false).setLocation();
+        log.wtf(globals.notifToken);
+        // await Provider.of<Location>(context, listen: false).setLocation();
         // if (mounted) {
-        //   await Provider.of<UserCart>(context, listen: false)
-        //       .cartProducts;
+        //   await Provider.of<UserCart>(context, listen: false).getProducts();
         // }
       },
     );
@@ -53,13 +59,23 @@ class _CheckoutState extends State<Checkout> {
     List<Product> products = Provider.of<UserCart>(
       context,
     ).cartProducts;
-    List<Map<String, String>> productQuantity = Provider.of<UserCart>(
+
+    log.wtf(lat, log);
+
+    List<ProdQuanity> productQuantity = Provider.of<UserCart>(
       context,
     ).prodQuantity;
-    var log = Logger();
-    log.wtf(products[0].id);
-    log.wtf(productQuantity.firstWhere(
-        (element) => element['productId'] == products[0].id)['quantity']);
+
+    String userID = Provider.of<UserCart>(
+      context,
+    ).getUserId;
+    double total = Provider.of<UserCart>(
+      context,
+    ).getTotalPrice;
+
+    // log.wtf(products[0].id);
+    // log.wtf(productQuantity.firstWhere(
+    //     (element) => element['productId'] == products[0].id)['quantity']);
 
     TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
@@ -317,7 +333,7 @@ class _CheckoutState extends State<Checkout> {
                                                           0.03,
                                                   fontWeight: FontWeight.bold)),
                                           Text(
-                                              '${productQuantity.firstWhere((element) => element['productId'] == data.id)['quantity']}',
+                                              '${productQuantity.firstWhere((element) => element.getProductId == data.id).getquanity}',
                                               style: TextStyle(
                                                   letterSpacing: 0.08,
                                                   fontSize:
@@ -380,7 +396,7 @@ class _CheckoutState extends State<Checkout> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("PKR 0000",
+                      Text("PKR ${total}",
                           style: TextStyle(
                               letterSpacing: 0.08,
                               fontSize: mediaQuery.size.width * 0.035,
@@ -398,7 +414,7 @@ class _CheckoutState extends State<Checkout> {
                       SizedBox(
                         height: mediaQuery.size.height * 0.01,
                       ),
-                      Text("Rs. 0000",
+                      Text("Rs. ${total}",
                           style: TextStyle(
                               letterSpacing: 0.08,
                               fontSize: mediaQuery.size.width * 0.042,
@@ -416,7 +432,13 @@ class _CheckoutState extends State<Checkout> {
             color: const Color.fromARGB(193, 27, 209, 161),
             icon: Icons.arrow_forward,
             buttonLabel: "PLace Order",
-            onPressHandler: () async {},
+            onPressHandler: () async {
+              log.wtf('here');
+              await Provider.of<Orders>(context, listen: false)
+                  .createOrder(products, productQuantity, userID, total);
+              // if(mounted) return
+              Navigator.pop(context);
+            },
           ),
           SizedBox(
             height: mediaQuery.size.height * 0.03,

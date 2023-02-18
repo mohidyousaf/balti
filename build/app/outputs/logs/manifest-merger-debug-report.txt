@@ -43,6 +43,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mohi
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mohidyousaf/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.room:room-runtime:2.2.5] /Users/mohidyousaf/.gradle/caches/transforms-3/155e0ac8599c055a84c5726d00973d3b/transformed/room-runtime-2.2.5/AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.room:room-runtime:2.2.5] /Users/mohidyousaf/.gradle/caches/transforms-3/155e0ac8599c055a84c5726d00973d3b/transformed/room-runtime-2.2.5/AndroidManifest.xml:24:5-29:19
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:8:6-16:20
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:8:6-16:20
+MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:7:5-9:19
+MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:7:5-9:19
+	android:supportsRtl
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:7:18-44
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /Users/mohidyousaf/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 	android:name
@@ -61,6 +67,7 @@ MERGED from [:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/buil
 MERGED from [:flutter_plugin_android_lifecycle] /Users/mohidyousaf/client1Flutter/Balti/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:geocoding] /Users/mohidyousaf/client1Flutter/Balti/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:onesignal_flutter] /Users/mohidyousaf/client1Flutter/Balti/build/onesignal_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [:video_player_android] /Users/mohidyousaf/client1Flutter/Balti/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:flutter_secure_storage] /Users/mohidyousaf/client1Flutter/Balti/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/mohidyousaf/.gradle/caches/transforms-3/1084b997db70f9a41dbd052c2dbf83ed/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
@@ -104,6 +111,7 @@ MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/mohi
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/eba3ac105ce1a200b5302334a4f79c0c/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/86da411e3ef3e48ed679a69941c8410e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.8.0] /Users/mohidyousaf/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.security:security-crypto:1.1.0-alpha04] /Users/mohidyousaf/.gradle/caches/transforms-3/979ca55c19e48ae4f35d88a555f3ad16/transformed/jetified-security-crypto-1.1.0-alpha04/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/f9c596d18d69b11c835d857fb1e78551/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:17:1-33:12
@@ -131,6 +139,9 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/mohidyousaf/.gradle/c
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/ea6a0879485e52a4f4039ca8778d8de8/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/4c666c731f72bca13b96ec6fea44ce5c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/e9ca322f243d3b7ed3a19622385d8532/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:2:1-17:80
+MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:2:1-10:12
+MERGED from [com.amazonaws:aws-android-sdk-auth-core:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/781099d71c6791b4fa4d9df93fe1e333/transformed/jetified-aws-android-sdk-auth-core-2.16.6/AndroidManifest.xml:2:1-4:80
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/58e3540d7f5a5bac6af9a8f8fab44363/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml:1:1-8:12
 INJECTED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml:1:1-8:12
@@ -177,6 +188,8 @@ MERGED from [:geocoding] /Users/mohidyousaf/client1Flutter/Balti/build/geocoding
 MERGED from [:geocoding] /Users/mohidyousaf/client1Flutter/Balti/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:onesignal_flutter] /Users/mohidyousaf/client1Flutter/Balti/build/onesignal_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:onesignal_flutter] /Users/mohidyousaf/client1Flutter/Balti/build/onesignal_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:video_player_android] /Users/mohidyousaf/client1Flutter/Balti/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:video_player_android] /Users/mohidyousaf/client1Flutter/Balti/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_secure_storage] /Users/mohidyousaf/client1Flutter/Balti/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-9:53
@@ -263,6 +276,8 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/mohidyousaf/.g
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/86da411e3ef3e48ed679a69941c8410e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.8.0] /Users/mohidyousaf/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.8.0] /Users/mohidyousaf/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:4:5-73
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:4:5-73
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.security:security-crypto:1.1.0-alpha04] /Users/mohidyousaf/.gradle/caches/transforms-3/979ca55c19e48ae4f35d88a555f3ad16/transformed/jetified-security-crypto-1.1.0-alpha04/AndroidManifest.xml:20:5-44
@@ -317,6 +332,10 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/4c666c731f72bca13b96ec6fea44ce5c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/e9ca322f243d3b7ed3a19622385d8532/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/e9ca322f243d3b7ed3a19622385d8532/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:17:1-69
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:17:1-69
+MERGED from [com.amazonaws:aws-android-sdk-auth-core:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/781099d71c6791b4fa4d9df93fe1e333/transformed/jetified-aws-android-sdk-auth-core-2.16.6/AndroidManifest.xml:4:1-69
+MERGED from [com.amazonaws:aws-android-sdk-auth-core:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/781099d71c6791b4fa4d9df93fe1e333/transformed/jetified-aws-android-sdk-auth-core-2.16.6/AndroidManifest.xml:4:1-69
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/58e3540d7f5a5bac6af9a8f8fab44363/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/58e3540d7f5a5bac6af9a8f8fab44363/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml
@@ -331,12 +350,20 @@ INJECTED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/Andr
 		INJECTED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml:7:5-66
+MERGED from [:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
 MERGED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:17:5-67
 MERGED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:17:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mohidyousaf/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mohidyousaf/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/eac4a59e55771288ff19f18c3ef269fa/transformed/jetified-firebase-iid-19.0.0/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/eac4a59e55771288ff19f18c3ef269fa/transformed/jetified-firebase-iid-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:6:5-66
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:6:5-66
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:4:5-66
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:4:5-66
+MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:4:5-66
+MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:4:5-66
 	android:name
 		ADDED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml:7:22-64
 uses-permission#android.permission.FOREGROUND_SERVICE
@@ -389,6 +416,28 @@ ADDED from [:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build
 		ADDED from [:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
 	android:name
 		ADDED from [:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-79
+MERGED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:25:5-79
+MERGED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mohidyousaf/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mohidyousaf/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/eac4a59e55771288ff19f18c3ef269fa/transformed/jetified-firebase-iid-19.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/eac4a59e55771288ff19f18c3ef269fa/transformed/jetified-firebase-iid-19.0.0/AndroidManifest.xml:22:5-79
+MERGED from [androidx.work:work-runtime:2.7.1] /Users/mohidyousaf/.gradle/caches/transforms-3/b5d03bc123d0b973c47a690424759932/transformed/work-runtime-2.7.1/AndroidManifest.xml:26:5-79
+MERGED from [androidx.work:work-runtime:2.7.1] /Users/mohidyousaf/.gradle/caches/transforms-3/b5d03bc123d0b973c47a690424759932/transformed/work-runtime-2.7.1/AndroidManifest.xml:26:5-79
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:7:5-78
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:7:5-78
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/02b99fdd74663f4e2f45bdd500de7df6/transformed/jetified-exoplayer-common-2.18.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/02b99fdd74663f4e2f45bdd500de7df6/transformed/jetified-exoplayer-common-2.18.0/AndroidManifest.xml:24:5-79
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:5:5-78
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:5:5-78
+MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:5:5-78
+MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:5:5-78
+	android:name
+		ADDED from [:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-76
 permission#${applicationId}.permission.C2D_MESSAGE
 ADDED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:7:5-9:47
 	android:protectionLevel
@@ -431,20 +480,6 @@ uses-permission#android.permission.VIBRATE
 ADDED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:24:5-66
 	android:name
 		ADDED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:24:22-63
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mohidyousaf/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mohidyousaf/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/eac4a59e55771288ff19f18c3ef269fa/transformed/jetified-firebase-iid-19.0.0/AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/eac4a59e55771288ff19f18c3ef269fa/transformed/jetified-firebase-iid-19.0.0/AndroidManifest.xml:22:5-79
-MERGED from [androidx.work:work-runtime:2.7.1] /Users/mohidyousaf/.gradle/caches/transforms-3/b5d03bc123d0b973c47a690424759932/transformed/work-runtime-2.7.1/AndroidManifest.xml:26:5-79
-MERGED from [androidx.work:work-runtime:2.7.1] /Users/mohidyousaf/.gradle/caches/transforms-3/b5d03bc123d0b973c47a690424759932/transformed/work-runtime-2.7.1/AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/02b99fdd74663f4e2f45bdd500de7df6/transformed/jetified-exoplayer-common-2.18.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/02b99fdd74663f4e2f45bdd500de7df6/transformed/jetified-exoplayer-common-2.18.0/AndroidManifest.xml:24:5-79
-	android:name
-		ADDED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:25:22-76
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:30:5-81
 MERGED from [androidx.work:work-runtime:2.7.1] /Users/mohidyousaf/.gradle/caches/transforms-3/b5d03bc123d0b973c47a690424759932/transformed/work-runtime-2.7.1/AndroidManifest.xml:27:5-81
@@ -977,3 +1012,71 @@ ADDED from [androidx.room:room-runtime:2.2.5] /Users/mohidyousaf/.gradle/caches/
 		ADDED from [androidx.room:room-runtime:2.2.5] /Users/mohidyousaf/.gradle/caches/transforms-3/155e0ac8599c055a84c5726d00973d3b/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
 	android:name
 		ADDED from [androidx.room:room-runtime:2.2.5] /Users/mohidyousaf/.gradle/caches/transforms-3/155e0ac8599c055a84c5726d00973d3b/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:6:5-75
+	android:name
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:6:22-73
+activity#com.amazonaws.mobile.auth.userpools.ForceChangePasswordActivity
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:10-269
+	android:screenOrientation
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:231-267
+	android:label
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:91-151
+	android:configChanges
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:20-90
+	android:name
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:152-230
+activity#com.amazonaws.mobile.auth.userpools.ForgotPasswordActivity
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:10-258
+	android:screenOrientation
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:220-256
+	android:label
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:91-145
+	android:configChanges
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:20-90
+	android:name
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:146-219
+activity#com.amazonaws.mobile.auth.userpools.SignUpActivity
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:10-242
+	android:screenOrientation
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:204-240
+	android:label
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:91-137
+	android:configChanges
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:20-90
+	android:name
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:138-203
+activity#com.amazonaws.mobile.auth.userpools.MFAActivity
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:10-235
+	android:screenOrientation
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:197-233
+	android:label
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:91-133
+	android:configChanges
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:20-90
+	android:name
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:134-196
+activity#com.amazonaws.mobile.auth.userpools.SignUpConfirmActivity
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:10-257
+	android:screenOrientation
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:219-255
+	android:label
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:91-145
+	android:configChanges
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:20-90
+	android:name
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/9410488e74b5746567f5ae2291371ede/transformed/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:146-218
+activity#com.amazonaws.mobile.auth.ui.SignInActivity
+ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:9-234
+	android:screenOrientation
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:196-232
+	android:label
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:90-136
+	android:configChanges
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:19-89
+	android:name
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mohidyousaf/.gradle/caches/transforms-3/190ac0b4762e08d0f4e95cf2f67195ff/transformed/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:137-195
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml:1:1-8:12 reason: com.amazonaws.mobile.auth.ui has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from /Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml:1:1-8:12 reason: com.amazonaws.mobile.auth.ui has a targetSdkVersion < 4

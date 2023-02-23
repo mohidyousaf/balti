@@ -82,6 +82,7 @@ class Businesses with ChangeNotifier {
           await nw.postDataWithImage("businesses", business.imageUrl, body);
     } catch (e) {
       debugPrint('debug: $e');
+      return response;
     }
     return response;
   }
@@ -140,11 +141,12 @@ class Businesses with ChangeNotifier {
 
   Future<void> getAllBusinesses() async {
     //Send Api call to server for delete
+    businesses = [];
     final response = await http.get(Uri.parse(
         'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/businesses'));
 
     if (response.statusCode == 200) {
-      print(jsonDecode(response.body));
+      // print(jsonDecode(response.body));
       var jsonResponse = jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i = i + 1) {
         print("********************");
@@ -153,6 +155,26 @@ class Businesses with ChangeNotifier {
       }
     } else {
       throw Exception('Failed to load album');
+    }
+    notifyListeners();
+  }
+
+  Future<void> getAllBusinessesInRadius(double lat, double lng) async {
+    businesses = [];
+    Map<String, String> body = {'lat': lat.toString(), 'lng': lng.toString()};
+    log.wtf(body);
+    dynamic response;
+    try {
+      response = await nw.post("businesses/byArea", body);
+      List<dynamic> responseBody = jsonDecode(response.body);
+
+      for (var i = 0; i < responseBody.length; i = i + 1) {
+        print("******************");
+        log.d(responseBody[i]);
+        businesses.add(Business.fromJson(responseBody[i]));
+      }
+    } catch (e) {
+      log.e('debug: $e');
     }
     notifyListeners();
   }
@@ -168,7 +190,8 @@ class Businesses with ChangeNotifier {
           lat: 12.01,
           lng: 22.1,
           description: 'Finest dining in the city',
-          imageUrl: 'assets/images/arcadian.jpg',
+          imageUrl:
+              'https://balti-files.s3.amazonaws.com/scaled_image_picker2069383530294344755.jpg',
           rating: 4.5,
           deliveryCharges: 200,
           locationDescription: ""),
@@ -181,7 +204,8 @@ class Businesses with ChangeNotifier {
           lat: 10.01,
           lng: 20.1,
           description: 'Find the best sandwiches in the city',
-          imageUrl: 'assets/images/subway.png',
+          imageUrl:
+              'https://balti-files.s3.amazonaws.com/scaled_image_picker2069383530294344755.jpg',
           rating: 4.0,
           deliveryCharges: 0,
           locationDescription: ""),

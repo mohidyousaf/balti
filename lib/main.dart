@@ -12,6 +12,7 @@ import 'package:balti_app/pages/user/cart_screen.dart';
 import 'package:balti_app/providers/cart_provider.dart';
 import 'package:balti_app/providers/order_provider.dart';
 import 'package:balti_app/widgets/DashScreensContent/business_detail.dart';
+import 'package:balti_app/widgets/DashScreensContent/home_body.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
@@ -163,6 +164,7 @@ class _MyAppState extends State<MyApp> {
             '/': (ctx) => const UserDashScreen(
                 // userId: "61607aa83335d4dd8e75ddc7",
                 ),
+            '/home': (ctx) => const HomeScreenBody(),
             // '/': (ctx) => const FeedBack(),
             // SignUpScreen.routeName: (ctx) => const SignUpScreen(),
             MapScreen.routeName: (context) => const MapScreen()

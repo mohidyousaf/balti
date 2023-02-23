@@ -99,7 +99,8 @@ class _SellerDashboardState extends State<SellerDashboard> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => OrderList(userId: widget.userId)),
+                    MaterialPageRoute(
+                        builder: (context) => OrderList(userId: widget.userId)),
                   );
                 },
                 backgroundColor: const Color.fromARGB(193, 27, 209, 161),
@@ -133,7 +134,8 @@ class _SellerDashboardState extends State<SellerDashboard> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => FeedBack(userId: widget.userId)),
+                    MaterialPageRoute(
+                        builder: (context) => FeedBack(userId: widget.userId)),
                   );
                 },
                 backgroundColor: const Color.fromARGB(193, 27, 209, 161),

@@ -13,32 +13,32 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml:7:5-66
-15-->/Users/mohidyousaf/client1Flutter/Balti/android/app/src/debug/AndroidManifest.xml:7:22-64
+15-->/Users/mohidyousaf/Balti/android/app/src/debug/AndroidManifest.xml:7:5-66
+15-->/Users/mohidyousaf/Balti/android/app/src/debug/AndroidManifest.xml:7:22-64
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->/Users/mohidyousaf/client1Flutter/Balti/android/app/src/main/AndroidManifest.xml:4:5-79
-16-->/Users/mohidyousaf/client1Flutter/Balti/android/app/src/main/AndroidManifest.xml:4:22-76
+16-->/Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml:4:5-79
+16-->/Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml:4:22-76
 17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-17-->/Users/mohidyousaf/client1Flutter/Balti/android/app/src/main/AndroidManifest.xml:5:5-81
-17-->/Users/mohidyousaf/client1Flutter/Balti/android/app/src/main/AndroidManifest.xml:5:22-78
+17-->/Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml:5:5-81
+17-->/Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml:5:22-78
 18    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-18-->[:geolocator_android] /Users/mohidyousaf/client1Flutter/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
-18-->[:geolocator_android] /Users/mohidyousaf/client1Flutter/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
+18-->[:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
+18-->[:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
 19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-19-->[:file_picker] /Users/mohidyousaf/client1Flutter/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-80
-19-->[:file_picker] /Users/mohidyousaf/client1Flutter/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-77
+19-->[:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-80
+19-->[:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-77
 20
 21    <queries>
-21-->[:file_picker] /Users/mohidyousaf/client1Flutter/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
+21-->[:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
 22        <intent>
-22-->[:file_picker] /Users/mohidyousaf/client1Flutter/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
+22-->[:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
 23            <action android:name="android.intent.action.GET_CONTENT" />
-23-->[:file_picker] /Users/mohidyousaf/client1Flutter/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
-23-->[:file_picker] /Users/mohidyousaf/client1Flutter/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
+23-->[:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
+23-->[:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
 24
 25            <data android:mimeType="*/*" />
-25-->[:file_picker] /Users/mohidyousaf/client1Flutter/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
-25-->[:file_picker] /Users/mohidyousaf/client1Flutter/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
+25-->[:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
+25-->[:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
 26        </intent>
 27        <!-- Needs to be explicitly declared on Android R+ -->
 28        <package android:name="com.google.android.apps.maps" />
@@ -47,8 +47,8 @@
 29    </queries>
 30
 31    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Create a unique permission for your app and use it so only your app can receive your OneSignal messages. -->
-31-->[:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-79
-31-->[:aws_s3] /Users/mohidyousaf/client1Flutter/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-76
+31-->[:aws_s3] /Users/mohidyousaf/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-79
+31-->[:aws_s3] /Users/mohidyousaf/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-76
 32    <permission
 32-->[com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:7:5-9:47
 33        android:name="com.example.balti_app.permission.C2D_MESSAGE"
@@ -193,32 +193,32 @@
 119            android:value="AIzaSyAenQY3RYwkA56eDMWZbIPUC1oJeCIR3c4" />
 120
 121        <service
-121-->[:geolocator_android] /Users/mohidyousaf/client1Flutter/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
+121-->[:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
 122            android:name="com.baseflow.geolocator.GeolocatorLocationService"
-122-->[:geolocator_android] /Users/mohidyousaf/client1Flutter/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
+122-->[:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
 123            android:enabled="true"
-123-->[:geolocator_android] /Users/mohidyousaf/client1Flutter/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
+123-->[:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
 124            android:exported="false"
-124-->[:geolocator_android] /Users/mohidyousaf/client1Flutter/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+124-->[:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
 125            android:foregroundServiceType="location" />
-125-->[:geolocator_android] /Users/mohidyousaf/client1Flutter/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
+125-->[:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
 126
 127        <provider
-127-->[:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+127-->[:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
 128            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-128-->[:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-82
+128-->[:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-82
 129            android:authorities="com.example.balti_app.flutter.image_provider"
-129-->[:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-74
+129-->[:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-74
 130            android:exported="false"
-130-->[:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+130-->[:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
 131            android:grantUriPermissions="true" >
-131-->[:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+131-->[:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
 132            <meta-data
-132-->[:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:75
+132-->[:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:75
 133                android:name="android.support.FILE_PROVIDER_PATHS"
-133-->[:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+133-->[:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
 134                android:resource="@xml/flutter_image_picker_file_paths" />
-134-->[:image_picker_android] /Users/mohidyousaf/client1Flutter/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
+134-->[:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
 135        </provider>
 136
 137        <receiver

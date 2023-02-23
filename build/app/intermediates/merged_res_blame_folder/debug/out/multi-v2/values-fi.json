@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/mohidyousaf/client1Flutter/Balti/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml",
+            "outputFile": "/Users/mohidyousaf/Balti/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml",
             "map": [
                 {
                     "source": "/Users/mohidyousaf/.gradle/caches/transforms-3/2efeb32dcb56b0d2799ab543d25b1181/transformed/browser-1.3.0/res/values-fi/values-fi.xml",

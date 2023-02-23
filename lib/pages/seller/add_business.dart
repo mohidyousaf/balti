@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:balti_app/models/business.dart';
 import 'package:balti_app/pages/seller/business_list.dart';
+import 'package:balti_app/providers/location_provider.dart';
 import 'package:balti_app/widgets/DashScreensContent/business_detail.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -66,6 +67,8 @@ class _AddBusinessState extends State<AddBusiness> {
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
+    double lat = Provider.of<Location>(context).latitude;
+    double lng = Provider.of<Location>(context).longitude;
     TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
@@ -231,8 +234,8 @@ class _AddBusinessState extends State<AddBusiness> {
                                   name: nameController.text,
                                   phoneNumber: phoneNumberController.text,
                                   type: typeController.text,
-                                  lat: 1,
-                                  lng: 1,
+                                  lat: lat,
+                                  lng: lng,
                                   description: descriptionController.text,
                                   imageUrl: filepath,
                                   rating: 0,

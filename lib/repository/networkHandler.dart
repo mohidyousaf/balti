@@ -28,8 +28,14 @@ class NetworkHandler {
     var response = await http.post(Uri.parse(url),
         headers: {"Content-type": "application/json"}, body: json.encode(body));
 
-    print(response);
-    return response;
+    if (response.statusCode == 200) {
+      log.d(response.statusCode);
+      log.wtf(jsonDecode(response.body));
+      return response;
+    } else {
+      log.e(response.statusCode);
+      throw Exception('Failed to load album');
+    }
   }
 
   Future<http.Response> patch(String url, Map<String, String> body) async {

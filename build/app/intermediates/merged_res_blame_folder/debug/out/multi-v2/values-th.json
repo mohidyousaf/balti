@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/mohidyousaf/client1Flutter/Balti/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-th/values-th.xml",
+            "outputFile": "/Users/mohidyousaf/Balti/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-th/values-th.xml",
             "map": [
                 {
                     "source": "/Users/mohidyousaf/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/res/values-th/values-th.xml",

@@ -34,7 +34,7 @@ class Business {
   });
 
   factory Business.fromJson(Map<String, dynamic> json) {
-    log.d(json);
+    // log.d(json);
     return Business(
       id: json['_id'] ?? "1234555",
       ownerId: json['user'] ?? "default user id",

@@ -38,8 +38,6 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                     .getAllBusinessesInRadius(
                         Provider.of<Location>(context, listen: false).lng,
                         Provider.of<Location>(context, listen: false).lat);
-                getProducts = Provider.of<Products>(context, listen: false)
-                    .findAllProducts();
               }));
     });
   }
@@ -53,12 +51,14 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             List<Business> businesses = context.watch<Businesses>().businesses;
-            List<Product> products = context.watch<Products>().products;
+            Provider.of<Products>(context, listen: false)
+                .filterProducts(businesses.map((e) => e.id).toList());
+            List<Product> products = context.watch<Products>().filteredProducts;
             return SafeArea(
               child: context.watch<Businesses>().businesses.isEmpty
                   ? Center(
                       child: Text(
-                      "No Orders",
+                      "No Businesses",
                       style: TextStyle(
                           fontSize: mediaQuery.size.width * 0.05,
                           color: Colors.black),

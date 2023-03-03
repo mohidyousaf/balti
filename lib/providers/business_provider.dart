@@ -162,20 +162,21 @@ class Businesses with ChangeNotifier {
   Future<void> getAllBusinessesInRadius(double lat, double lng) async {
     businesses = [];
     Map<String, String> body = {'lat': lat.toString(), 'lng': lng.toString()};
-    log.wtf(body);
+    // log.wtf(body);
     dynamic response;
     try {
       response = await nw.post("businesses/byArea", body);
       List<dynamic> responseBody = jsonDecode(response.body);
 
       for (var i = 0; i < responseBody.length; i = i + 1) {
-        print("******************");
-        log.d(responseBody[i]);
+        // print("******************");
+        // log.d(responseBody[i]);
         businesses.add(Business.fromJson(responseBody[i]));
       }
     } catch (e) {
       log.e('debug: $e');
     }
+    log.wtf(businesses[0].id);
     notifyListeners();
   }
 

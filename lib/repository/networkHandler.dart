@@ -30,7 +30,7 @@ class NetworkHandler {
 
     if (response.statusCode == 200) {
       log.d(response.statusCode);
-      log.wtf(jsonDecode(response.body));
+      // log.wtf(jsonDecode(response.body));
       return response;
     } else {
       log.e(response.statusCode);

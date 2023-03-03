@@ -24,6 +24,8 @@ class Products with ChangeNotifier {
 
   List<Product> products = [];
   List<Product> businessProducts = [];
+  List<Product> allBusinessProducts = [];
+  List<Product> filteredProducts = [];
 
   List<Product> get getProducts {
     return [...products];
@@ -70,6 +72,44 @@ class Products with ChangeNotifier {
     }
     log.i(businessProducts);
     notifyListeners();
+    // return products.where((prod) => prod.businessId == id).toList();
+  }
+
+  Future<void> findAllByBusinessId(List<String> ids) async {
+    print({ids});
+    allBusinessProducts = [];
+
+    for (var i = 0; i < ids.length; i++) {
+      String id = ids[i];
+      dynamic response;
+      try {
+        response = await nw.get("businesses/listProducts/$id");
+      } catch (e) {
+        debugPrint('debug: $e');
+      }
+
+      // log.i(response);
+
+      if (response.length > 0) {
+        // If the server did return a 200 OK response,
+        // then parse the JSON.
+        for (var i = 0; i < response.length; i = i + 1) {
+          try {
+            allBusinessProducts.add(Product.fromJson(response[i]));
+          } catch (e) {
+            debugPrint('debug: $e');
+          }
+        }
+        // return businesses.firstWhere((bus) => bus.id == id);
+      } else {
+        // If the server did not return a 200 OK response,
+        // then throw an exception.
+        throw Exception('Failed to load album');
+      }
+      log.i(allBusinessProducts);
+      notifyListeners();
+    }
+
     // return products.where((prod) => prod.businessId == id).toList();
   }
 
@@ -150,16 +190,28 @@ class Products with ChangeNotifier {
         'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/products'));
 
     if (response.statusCode == 200) {
-      print(jsonDecode(response.body));
+      // print(jsonDecode(response.body));
       var jsonResponse = jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i = i + 1) {
-        print("********************");
+        // print("********************");
         // print(jsonResponse[i]);
         products.add(Product.fromJson(jsonResponse[i]));
       }
     } else {
       throw Exception('Failed to load album');
     }
+    notifyListeners();
+  }
+
+  Future<void> filterProducts(List<String> ids) async {
+    log.i(ids);
+    filteredProducts = [];
+    for (var i = 0; i < products.length; i++) {
+      if (ids.contains(products[i].businessId)) {
+        filteredProducts.add(products[i]);
+      }
+    }
+
     notifyListeners();
   }
 

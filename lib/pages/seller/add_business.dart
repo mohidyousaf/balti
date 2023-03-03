@@ -227,6 +227,15 @@ class _AddBusinessState extends State<AddBusiness> {
                         if (_formKey.currentState!.validate()) {
                           print(
                               "****************  FORM KEY VALIDATED  ***************");
+                          Future.delayed(const Duration(seconds: 1), () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        BusinessList(userId: widget.userId),
+                                    settings:
+                                        RouteSettings(name: "/businessList")));
+                          });
                           await Provider.of<Businesses>(context, listen: false)
                               .addBusiness(Business(
                                   id: " ",
@@ -242,11 +251,11 @@ class _AddBusinessState extends State<AddBusiness> {
                                   deliveryCharges: 0,
                                   locationDescription: addressController.text));
 
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      BusinessList(userId: widget.userId)));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) =>
+                          //             BusinessList(userId: widget.userId)));
                         }
                       },
                     ),

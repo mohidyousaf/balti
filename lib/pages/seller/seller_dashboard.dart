@@ -4,6 +4,7 @@ import 'package:balti_app/pages/seller/business_list.dart';
 import 'package:balti_app/pages/seller/feedback.dart';
 import 'package:balti_app/pages/seller/order_list.dart';
 import 'package:balti_app/pages/user/user_dash_screen.dart';
+import 'package:balti_app/providers/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +19,17 @@ class SellerDashboard extends StatefulWidget {
 }
 
 class _SellerDashboardState extends State<SellerDashboard> {
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<Orders>(context, listen: false)
+        .getOrdersByStatus("In Approval", widget.userId);
+    Provider.of<Orders>(context, listen: false)
+        .getOrdersByStatus("In Processing", widget.userId);
+    Provider.of<Orders>(context, listen: false)
+        .getOrdersByStatus("Completed", widget.userId);
+  }
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);

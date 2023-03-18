@@ -54,7 +54,7 @@ class Orders with ChangeNotifier {
   }
 
   Future<Void?> getOrdersByStatus(String status, String userId) async {
-    log.d("In getOrderbystatus");
+    // log.d("In getOrderbystatus");
     dynamic response;
     try {
       response = await nw.get("orders/business/$userId/$status");
@@ -62,29 +62,27 @@ class Orders with ChangeNotifier {
       log.e(e);
     }
 
-    log.d(response);
+    // log.d(response);
     approvalOrders = [];
     processedOrders = [];
     completedOrders = [];
-    if (status == "In Approval") {
-      for (var i = 0; i < response.length; i = i + 1) {
-        print("********************");
-        print(response[i]);
-        approvalOrders.add(Order.fromJson(response[i]));
-      }
-    } else if (status == "In Processing") {
-      for (var i = 0; i < response.length; i = i + 1) {
-        print("********************");
-        print(response[i]);
-        processedOrders.add(Order.fromJson(response[i]));
-      }
-    } else if (status == "Completed") {
-      for (var i = 0; i < response.length; i = i + 1) {
-        print("********************");
-        print(response[i]);
-        completedOrders.add(Order.fromJson(response[i]));
+    if (response != null) {
+      if (status == "In Approval") {
+        for (var i = 0; i < response.length; i = i + 1) {
+          approvalOrders.add(Order.fromJson(response[i]));
+        }
+      } else if (status == "In Processing") {
+        if (response) {}
+        for (var i = 0; i < response.length; i = i + 1) {
+          processedOrders.add(Order.fromJson(response[i]));
+        }
+      } else if (status == "Completed") {
+        for (var i = 0; i < response.length; i = i + 1) {
+          completedOrders.add(Order.fromJson(response[i]));
+        }
       }
     }
+
     notifyListeners();
   }
 

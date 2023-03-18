@@ -60,8 +60,6 @@ class _CheckoutState extends State<Checkout> {
       context,
     ).cartProducts;
 
-    log.wtf(lat, log);
-
     List<ProdQuanity> productQuantity = Provider.of<UserCart>(
       context,
     ).prodQuantity;

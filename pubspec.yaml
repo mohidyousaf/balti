@@ -51,6 +51,7 @@ dependencies:
   flutter_secure_storage: ^7.0.1
   aws_s3: ^0.1.1+hotfix.5
   intl: ^0.18.0
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_test:

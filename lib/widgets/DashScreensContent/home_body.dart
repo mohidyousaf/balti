@@ -1,8 +1,11 @@
 import 'package:balti_app/providers/location_provider.dart';
+import 'package:balti_app/widgets/DashScreensContent/searchBar.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
-
+import 'package:balti_app/themes/colors.dart';
+import 'package:balti_app/themes/fonts.dart';
+import 'package:balti_app/themes/spacingAndBorders.dart';
 import '../../../widgets/product_card.dart';
 import '../restaurant_card.dart';
 import '../../models/business.dart';
@@ -50,7 +53,8 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         future: getBusinesses,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            List<Business> businesses = context.watch<Businesses>().businesses;
+            List<Business> businesses =
+                context.watch<Businesses>().filteredBusinesses;
             Provider.of<Products>(context, listen: false)
                 .filterProducts(businesses.map((e) => e.id).toList());
             List<Product> products = context.watch<Products>().filteredProducts;
@@ -61,12 +65,15 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                       "No Businesses",
                       style: TextStyle(
                           fontSize: mediaQuery.size.width * 0.05,
-                          color: Colors.black),
+                          color: Color.fromARGB(255, 255, 255, 255)),
                     ))
                   : SingleChildScrollView(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Container(
+                              margin: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                              child: SearchBarContainer(context: context)),
                           SizedBox(
                             height: SizeConfig.screenHeight / 29,
                           ),

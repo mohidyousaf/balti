@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:balti_app/pages/seller/seller_dashboard.dart';
+import 'package:balti_app/widgets/DashScreensContent/searchBar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -90,10 +91,10 @@ class _HomeAppBarState extends State<HomeAppBar> {
           ),
         );
       }), // Replace with result of Google Location Api
-      bottom: const PreferredSize(
-        preferredSize: Size.zero,
-        child: SearchBar(),
-      ),
+      // bottom:  PreferredSize(
+      //   preferredSize: Size.zero,
+      //   child: SearchBarContainer(),
+      // ),
       elevation: 0,
       backgroundColor: Colors.transparent,
       actions: [

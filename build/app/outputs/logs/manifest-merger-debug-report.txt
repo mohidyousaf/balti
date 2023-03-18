@@ -59,17 +59,18 @@ INJECTED from /Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml:
 INJECTED from /Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml:1:1-40:12
 INJECTED from /Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml:1:1-40:12
 MERGED from /Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml:1:1-40:12
-MERGED from [:video_thumbnail] /Users/mohidyousaf/Balti/build/video_thumbnail/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [:google_maps_flutter] /Users/mohidyousaf/Balti/build/google_maps_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:file_picker] /Users/mohidyousaf/Balti/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] /Users/mohidyousaf/Balti/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:path_provider_android] /Users/mohidyousaf/Balti/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:aws_s3] /Users/mohidyousaf/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-12:12
+MERGED from [:flutter_secure_storage] /Users/mohidyousaf/Balti/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:video_thumbnail] /Users/mohidyousaf/Balti/build/video_thumbnail/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:geocoding] /Users/mohidyousaf/Balti/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:onesignal_flutter] /Users/mohidyousaf/Balti/build/onesignal_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
-MERGED from [:aws_s3] /Users/mohidyousaf/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [:video_player_android] /Users/mohidyousaf/Balti/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
-MERGED from [:flutter_secure_storage] /Users/mohidyousaf/Balti/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/mohidyousaf/.gradle/caches/transforms-3/1084b997db70f9a41dbd052c2dbf83ed/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:2:1-136:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/mohidyousaf/.gradle/caches/transforms-3/246793f755122fe14a5802655438cb75/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
@@ -112,14 +113,14 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/mohid
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/86da411e3ef3e48ed679a69941c8410e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.8.0] /Users/mohidyousaf/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
 MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.security:security-crypto:1.1.0-alpha04] /Users/mohidyousaf/.gradle/caches/transforms-3/979ca55c19e48ae4f35d88a555f3ad16/transformed/jetified-security-crypto-1.1.0-alpha04/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/f9c596d18d69b11c835d857fb1e78551/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/9a15d0431946b4658756ca271d093b65/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mohidyousaf/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/ae893b832c725ae41cefb75af7327aef/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/88214ae4402e25358e7f081e2bdbbacb/transformed/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/mohidyousaf/.gradle/caches/transforms-3/8a5514d4341f323606d890e29d4268b9/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mohidyousaf/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/8e7ed7856c06357bf12956f976783317/transformed/jetified-exoplayer-datasource-2.18.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/b9e2e9cce87a2ba8cbf8a9f63eafe2b5/transformed/jetified-exoplayer-extractor-2.18.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/8a0d7f6761a5e7ee2cabc2867f12282b/transformed/jetified-exoplayer-decoder-2.18.0/AndroidManifest.xml:17:1-24:12
@@ -172,8 +173,6 @@ uses-sdk
 INJECTED from /Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/mohidyousaf/Balti/android/app/src/main/AndroidManifest.xml
-MERGED from [:video_thumbnail] /Users/mohidyousaf/Balti/build/video_thumbnail/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:video_thumbnail] /Users/mohidyousaf/Balti/build/video_thumbnail/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:geolocator_android] /Users/mohidyousaf/Balti/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:google_maps_flutter] /Users/mohidyousaf/Balti/build/google_maps_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -184,16 +183,20 @@ MERGED from [:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_
 MERGED from [:image_picker_android] /Users/mohidyousaf/Balti/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/mohidyousaf/Balti/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/mohidyousaf/Balti/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] /Users/mohidyousaf/Balti/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] /Users/mohidyousaf/Balti/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:aws_s3] /Users/mohidyousaf/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:aws_s3] /Users/mohidyousaf/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_secure_storage] /Users/mohidyousaf/Balti/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-9:53
+MERGED from [:flutter_secure_storage] /Users/mohidyousaf/Balti/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-9:53
+MERGED from [:video_thumbnail] /Users/mohidyousaf/Balti/build/video_thumbnail/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:video_thumbnail] /Users/mohidyousaf/Balti/build/video_thumbnail/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:geocoding] /Users/mohidyousaf/Balti/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:geocoding] /Users/mohidyousaf/Balti/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:onesignal_flutter] /Users/mohidyousaf/Balti/build/onesignal_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:onesignal_flutter] /Users/mohidyousaf/Balti/build/onesignal_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:aws_s3] /Users/mohidyousaf/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:aws_s3] /Users/mohidyousaf/Balti/build/aws_s3/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:video_player_android] /Users/mohidyousaf/Balti/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:video_player_android] /Users/mohidyousaf/Balti/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_secure_storage] /Users/mohidyousaf/Balti/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-9:53
-MERGED from [:flutter_secure_storage] /Users/mohidyousaf/Balti/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-9:53
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/mohidyousaf/.gradle/caches/transforms-3/1084b997db70f9a41dbd052c2dbf83ed/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/mohidyousaf/.gradle/caches/transforms-3/1084b997db70f9a41dbd052c2dbf83ed/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 MERGED from [com.onesignal:OneSignal:4.8.2] /Users/mohidyousaf/.gradle/caches/transforms-3/30feb14efd1b304473fa677bd2fd3f6f/transformed/jetified-OneSignal-4.8.2/AndroidManifest.xml:4:5-44
@@ -278,22 +281,22 @@ MERGED from [androidx.core:core:1.8.0] /Users/mohidyousaf/.gradle/caches/transfo
 MERGED from [androidx.core:core:1.8.0] /Users/mohidyousaf/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:4:5-73
 MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.6] /Users/mohidyousaf/.gradle/caches/transforms-3/28ff08b6cfa03e67b0d53f431b95cdc8/transformed/jetified-aws-android-sdk-mobile-client-2.16.6/AndroidManifest.xml:4:5-73
-MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.security:security-crypto:1.1.0-alpha04] /Users/mohidyousaf/.gradle/caches/transforms-3/979ca55c19e48ae4f35d88a555f3ad16/transformed/jetified-security-crypto-1.1.0-alpha04/AndroidManifest.xml:20:5-44
 MERGED from [androidx.security:security-crypto:1.1.0-alpha04] /Users/mohidyousaf/.gradle/caches/transforms-3/979ca55c19e48ae4f35d88a555f3ad16/transformed/jetified-security-crypto-1.1.0-alpha04/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/mohidyousaf/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/f9c596d18d69b11c835d857fb1e78551/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/f9c596d18d69b11c835d857fb1e78551/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/9a15d0431946b4658756ca271d093b65/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/9a15d0431946b4658756ca271d093b65/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mohidyousaf/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mohidyousaf/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/ae893b832c725ae41cefb75af7327aef/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/mohidyousaf/.gradle/caches/transforms-3/ae893b832c725ae41cefb75af7327aef/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/88214ae4402e25358e7f081e2bdbbacb/transformed/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/mohidyousaf/.gradle/caches/transforms-3/88214ae4402e25358e7f081e2bdbbacb/transformed/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/mohidyousaf/.gradle/caches/transforms-3/8a5514d4341f323606d890e29d4268b9/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/mohidyousaf/.gradle/caches/transforms-3/8a5514d4341f323606d890e29d4268b9/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mohidyousaf/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mohidyousaf/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/8e7ed7856c06357bf12956f976783317/transformed/jetified-exoplayer-datasource-2.18.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/8e7ed7856c06357bf12956f976783317/transformed/jetified-exoplayer-datasource-2.18.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.0] /Users/mohidyousaf/.gradle/caches/transforms-3/b9e2e9cce87a2ba8cbf8a9f63eafe2b5/transformed/jetified-exoplayer-extractor-2.18.0/AndroidManifest.xml:20:5-22:41

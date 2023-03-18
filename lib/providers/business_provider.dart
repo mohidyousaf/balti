@@ -21,8 +21,21 @@ class Businesses with ChangeNotifier {
 
   List<Business> businesses = [];
 
+  List<Business> filteredBusinesses = [];
+
   List<Business> get getBusinesses {
     return [...businesses];
+  }
+
+  Future<void> filterBusinesses(String text) async {
+    filteredBusinesses = [];
+    for (var i = 0; i < businesses.length; i++) {
+      if (businesses[i].name.toLowerCase().contains(text.toLowerCase())) {
+        filteredBusinesses.add(businesses[i]);
+      }
+    }
+    log.d("called provider", filteredBusinesses);
+    notifyListeners();
   }
 
   Future<void> findByUserId(String id) async {
@@ -176,7 +189,9 @@ class Businesses with ChangeNotifier {
     } catch (e) {
       log.e('debug: $e');
     }
-    log.wtf(businesses[0].id);
+    // log.wtf(businesses[0].id);
+    filteredBusinesses = businesses;
+
     notifyListeners();
   }
 

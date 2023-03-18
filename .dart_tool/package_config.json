@@ -50,6 +50,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "crypto",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "csslib",
       "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/csslib-0.17.2",
       "packageUri": "lib/",
@@ -72,6 +78,12 @@
       "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "file",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "file_picker",
@@ -198,6 +210,12 @@
       "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_windows-0.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "google_fonts",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-4.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "google_maps_flutter",
@@ -332,10 +350,58 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "path_provider",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.24",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "path_provider_foundation",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_foundation-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "path_provider_linux",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_provider_windows",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "plugin_platform_interface",
       "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "process",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "provider",
@@ -446,13 +512,19 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "xdg_directories",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/xdg_directories-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "balti_app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-02-18T15:56:37.938901Z",
+  "generated": "2023-03-18T11:30:14.196977Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }

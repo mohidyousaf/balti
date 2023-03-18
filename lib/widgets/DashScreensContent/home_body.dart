@@ -33,7 +33,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         Provider.of<Businesses>(context, listen: false).fetchAndSetBusinesses();
     getProducts =
         Provider.of<Products>(context, listen: false).findAllProducts();
-    Future.delayed(const Duration(seconds: 0), () async {
+    Future.delayed(const Duration(seconds: 1), () async {
       await Provider.of<Location>(context, listen: false)
           .setLocation()
           .then((value) => setState(() {
@@ -55,7 +55,8 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
           if (snapshot.connectionState == ConnectionState.done) {
             List<Business> businesses =
                 context.watch<Businesses>().filteredBusinesses;
-            Provider.of<Products>(context, listen: false)
+            context
+                .watch<Products>()
                 .filterProducts(businesses.map((e) => e.id).toList());
             List<Product> products = context.watch<Products>().filteredProducts;
             return SafeArea(
@@ -131,33 +132,40 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                               right: SizeConfig.screenWidth / 36,
                               bottom: SizeConfig.screenHeight / 72.5,
                             ),
-                            child: GridView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                childAspectRatio: 1 / 1.08,
-                                crossAxisSpacing: SizeConfig.screenWidth / 24,
-                                mainAxisSpacing:
-                                    SizeConfig.screenHeight / 48.33,
-                              ),
-                              itemCount: products.length,
-                              itemBuilder: (BuildContext ctx, int i) {
-                                return ProductCard(
-                                  productName: products[i].name,
-                                  price: products[i].price,
-                                  delay: '${products[i].duration.toInt()} min',
-                                  isFav: false,
-                                  imageUrl: products[i].images[0] ??
-                                      'assets/images/food_1.jpeg',
-                                  images: products[i].images,
-                                  userId: "63d134f3ae6ba6c5e178e3ca",
-                                  businessId: products[i].businessId,
-                                  productId: products[i].id,
-                                );
-                              },
-                            ),
+                            child: products.isEmpty
+                                ? const Center(
+                                    child: CircularProgressIndicator(),
+                                  )
+                                : GridView.builder(
+                                    shrinkWrap: true,
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    gridDelegate:
+                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2,
+                                      childAspectRatio: 1 / 1.08,
+                                      crossAxisSpacing:
+                                          SizeConfig.screenWidth / 24,
+                                      mainAxisSpacing:
+                                          SizeConfig.screenHeight / 48.33,
+                                    ),
+                                    itemCount: products.length,
+                                    itemBuilder: (BuildContext ctx, int i) {
+                                      return ProductCard(
+                                        productName: products[i].name,
+                                        price: products[i].price,
+                                        delay:
+                                            '${products[i].duration.toInt()} min',
+                                        isFav: false,
+                                        imageUrl: products[i].images[0] ??
+                                            'assets/images/food_1.jpeg',
+                                        images: products[i].images,
+                                        userId: "63d134f3ae6ba6c5e178e3ca",
+                                        businessId: products[i].businessId,
+                                        productId: products[i].id,
+                                      );
+                                    },
+                                  ),
                           ),
                           // Gridview for top products
                         ],

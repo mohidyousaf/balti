@@ -186,6 +186,7 @@ class Products with ChangeNotifier {
   }
 
   Future<void> findAllProducts() async {
+    products = [];
     final response = await http.get(Uri.parse(
         'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/products'));
 

@@ -52,6 +52,7 @@ dependencies:
   aws_s3: ^0.1.1+hotfix.5
   intl: ^0.18.0
   google_fonts: ^4.0.3
+  web_ffi: ^0.7.2
 
 dev_dependencies:
   flutter_test:

@@ -150,7 +150,7 @@ class Products with ChangeNotifier {
     });
     final response = await http.put(
       Uri.parse(
-          'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/products/${product.id}'),
+          'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/products/${product.id}'),
       headers: {"Content-Type": "application/json"},
       body: bod,
     );
@@ -170,7 +170,7 @@ class Products with ChangeNotifier {
   Future<void> deleteProduct(String id) async {
     //Send Api call to server for delete
     final response = await http.delete(Uri.parse(
-        'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/products/$id'));
+        'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/products/$id'));
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
@@ -188,7 +188,7 @@ class Products with ChangeNotifier {
   Future<void> findAllProducts() async {
     products = [];
     final response = await http.get(Uri.parse(
-        'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/products'));
+        'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/products'));
 
     if (response.statusCode == 200) {
       // print(jsonDecode(response.body));

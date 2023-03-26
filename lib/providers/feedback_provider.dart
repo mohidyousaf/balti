@@ -44,7 +44,7 @@ class FeedbackItems with ChangeNotifier {
   Future<void> getFeedbackOfBusiness(String id) async {
     businessFeedback = [];
     final response = await http.get(Uri.parse(
-        'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/feedbacks/$id/bus'));
+        'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/feedbacks/$id/bus'));
 
     print("********************");
     var jsonResponse = jsonDecode(response.body);
@@ -68,7 +68,7 @@ class FeedbackItems with ChangeNotifier {
   Future<void> getFeedbackOfProduct(String id) async {
     productFeedback = [];
     final response = await http.get(Uri.parse(
-        'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/feedbacks/$id/prod'));
+        'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/feedbacks/$id/prod'));
 
     print("********************");
     var jsonResponse = jsonDecode(response.body);

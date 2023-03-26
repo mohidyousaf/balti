@@ -7,7 +7,7 @@ import 'package:logger/logger.dart';
 
 class NetworkHandler {
   String baseurl =
-      'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/';
+      'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/';
   var log = Logger();
   FlutterSecureStorage storage = FlutterSecureStorage();
 

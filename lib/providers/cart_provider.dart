@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -78,10 +77,10 @@ class UserCart with ChangeNotifier {
       dynamic response;
       try {
         log.d(
-            'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/cart/$cartId');
+            'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/cart/$cartId');
         response = await http.put(
           Uri.parse(
-              'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/cart/$cartId'),
+              'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/cart/$cartId'),
           headers: {"Content-Type": "application/json"},
           body: json.encode(body),
         );
@@ -123,7 +122,7 @@ class UserCart with ChangeNotifier {
       try {
         response = await http.post(
           Uri.parse(
-              'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/cart'),
+              'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/cart'),
           headers: {"Content-Type": "application/json"},
           body: json.encode(body),
         );

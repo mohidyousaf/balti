@@ -506,6 +506,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "web_ffi",
+      "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/web_ffi-0.7.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "win32",
       "rootUri": "file:///Users/mohidyousaf/development/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.7.0",
       "packageUri": "lib/",
@@ -524,7 +530,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-03-18T11:30:14.196977Z",
+  "generated": "2023-03-23T16:07:28.514737Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }

@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:ffi';
+import 'package:web_ffi/web_ffi.dart';
 
 import 'package:balti_app/providers/cart_provider.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +53,7 @@ class Orders with ChangeNotifier {
     return [...orders];
   }
 
-  Future<Void?> getOrdersByStatus(String status, String userId) async {
+  Future<void> getOrdersByStatus(String status, String userId) async {
     // log.d("In getOrderbystatus");
     dynamic response;
     try {
@@ -72,7 +72,6 @@ class Orders with ChangeNotifier {
           approvalOrders.add(Order.fromJson(response[i]));
         }
       } else if (status == "In Processing") {
-        if (response) {}
         for (var i = 0; i < response.length; i = i + 1) {
           processedOrders.add(Order.fromJson(response[i]));
         }
@@ -82,7 +81,6 @@ class Orders with ChangeNotifier {
         }
       }
     }
-
     notifyListeners();
   }
 
@@ -160,7 +158,7 @@ class Orders with ChangeNotifier {
     try {
       response = await http.post(
         Uri.parse(
-            'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/orders'),
+            'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/orders'),
         headers: {"Content-Type": "application/json"},
         body: json.encode(body),
       );
@@ -177,7 +175,7 @@ class Orders with ChangeNotifier {
   //   // create new cart item with current cart id
   //   orderItems = [];
   //   final response = await http
-  //       .get(Uri.parse('http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/businesses/list/$id'));
+  //       .get(Uri.parse('http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/businesses/list/$id'));
 
   //   if (response.statusCode == 200) {
   //     // If the server did return a 200 OK response,

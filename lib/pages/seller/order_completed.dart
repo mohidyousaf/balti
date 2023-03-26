@@ -73,7 +73,7 @@ class _OrderCompletedState extends State<OrderCompleted> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Approval",
+                "Completed",
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w500,

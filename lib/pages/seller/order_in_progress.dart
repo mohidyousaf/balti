@@ -36,8 +36,6 @@ class _OrdersInProgressState extends State<OrdersInProgress> {
     SizeConfig().init(context);
     TextTheme textTheme = Theme.of(context).textTheme;
     MediaQueryData mediaQuery = MediaQuery.of(context);
-    List<Order> orders =
-        Provider.of<Orders>(context, listen: false).approvalOrders;
 
     return Scaffold(
       appBar: AppBar(
@@ -72,7 +70,7 @@ class _OrdersInProgressState extends State<OrdersInProgress> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Approval",
+                "In Progress",
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
@@ -86,6 +84,7 @@ class _OrdersInProgressState extends State<OrdersInProgress> {
                   future: getProgressedOrders,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
+                      log.wtf(context.watch<Orders>().processedOrders);
                       return Container(
                         // height: mediaQuery.size.height * 0.43,
                         alignment: Alignment.topLeft,

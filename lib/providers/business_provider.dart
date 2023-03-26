@@ -104,7 +104,7 @@ class Businesses with ChangeNotifier {
     //Send Api call to server for edit
     final response = await http.put(
       Uri.parse(
-          'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/businesses/${business.id}'),
+          'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/businesses/${business.id}'),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "user": business.ownerId,
@@ -137,7 +137,7 @@ class Businesses with ChangeNotifier {
   Future<void> deleteBusiness(String id) async {
     //Send Api call to server for delete
     final response = await http.delete(Uri.parse(
-        'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/businesses/$id'));
+        'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/businesses/$id'));
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
@@ -156,7 +156,7 @@ class Businesses with ChangeNotifier {
     //Send Api call to server for delete
     businesses = [];
     final response = await http.get(Uri.parse(
-        'http://baltiproject-env.eba-tyyrezah.ap-northeast-1.elasticbeanstalk.com/api/businesses'));
+        'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/businesses'));
 
     if (response.statusCode == 200) {
       // print(jsonDecode(response.body));

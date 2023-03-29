@@ -34,7 +34,7 @@ class Businesses with ChangeNotifier {
         filteredBusinesses.add(businesses[i]);
       }
     }
-    log.d("called provider", filteredBusinesses);
+    // log.d("called provider", filteredBusinesses);
     notifyListeners();
   }
 
@@ -88,7 +88,7 @@ class Businesses with ChangeNotifier {
       "longitude": business.lng.toString(),
       "locationDesc": business.locationDescription,
     };
-    log.wtf(body);
+    // log.wtf(body);
     dynamic response;
     try {
       response =
@@ -111,11 +111,11 @@ class Businesses with ChangeNotifier {
         "name": business.name,
         "type": business.type,
         "description": business.description,
-        "image": business.imageUrl,
+        // "image": business.imageUrl,
         "phoneNumber": business.phoneNumber,
         "delivery_charges": business.deliveryCharges,
-        "latitude": business.lat,
-        "longitude": business.lng,
+        "latitude": business.lat.toString(),
+        "longitude": business.lng.toString(),
         "locationDesc": business.locationDescription,
       }),
     );
@@ -123,8 +123,8 @@ class Businesses with ChangeNotifier {
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
-      print("Successfully edited business");
-      print(jsonDecode(response.body));
+      log.d("Successfully edited business");
+      log.i(jsonDecode(response.body));
       // return jsonDecode(response.body).id;
     } else {
       // If the server did not return a 201 CREATED response,

@@ -180,6 +180,8 @@ class _BusinessListState extends State<BusinessList> {
                                                           builder: (context) =>
                                                               EditBusiness(
                                                                 business: data,
+                                                                userId: widget
+                                                                    .userId,
                                                               )),
                                                     )
                                                   },

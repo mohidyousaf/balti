@@ -1,9 +1,12 @@
 import 'dart:io';
 
+import 'package:balti_app/pages/seller/business_list.dart';
+import 'package:balti_app/providers/location_provider.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -13,8 +16,10 @@ import '../../widgets/auth_form_field.dart';
 import '../../widgets/custom_icon_button.dart';
 
 class EditBusiness extends StatefulWidget {
-  const EditBusiness({Key? key, required this.business}) : super(key: key);
+  const EditBusiness({Key? key, required this.business, required this.userId})
+      : super(key: key);
   final Business business;
+  final String userId;
 
   @override
   State<EditBusiness> createState() => _EditBusinessState();
@@ -31,6 +36,7 @@ class _EditBusinessState extends State<EditBusiness> {
   final ntnController = TextEditingController();
 
   File? imageFile;
+  String filepath = "";
 
   _getFromGallery() async {
     XFile? pickedFile = await ImagePicker().pickImage(
@@ -42,6 +48,7 @@ class _EditBusinessState extends State<EditBusiness> {
       setState(() {
         print("*********************");
         print(pickedFile.path);
+        filepath = pickedFile.path;
         imageFile = File(pickedFile.path);
       });
     }
@@ -60,14 +67,16 @@ class _EditBusinessState extends State<EditBusiness> {
 
   @override
   Widget build(BuildContext context) {
-    nameController.text = widget.business.name;
-    descriptionController.text = widget.business.description;
-    phoneNumberController.text = widget.business.phoneNumber;
-    typeController.text = widget.business.type;
-    addressController.text = widget.business.locationDescription;
-    imageFile = File.fromUri(Uri.parse(widget.business.imageUrl));
+    // nameController.text = widget.business.name;
+    // descriptionController.text = widget.business.description;
+    // phoneNumberController.text = widget.business.phoneNumber;
+    // typeController.text = widget.business.type;
+    // addressController.text = widget.business.locationDescription;
+    // imageFile = File.fromUri(Uri.parse(widget.business.imageUrl));
     MediaQueryData mediaQuery = MediaQuery.of(context);
     TextTheme textTheme = Theme.of(context).textTheme;
+    double lat = Provider.of<Location>(context).latitude;
+    double lng = Provider.of<Location>(context).longitude;
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       appBar: PreferredSize(
@@ -223,6 +232,9 @@ class _EditBusinessState extends State<EditBusiness> {
                       buttonLabel: "Update",
                       onPressHandler: () async {
                         if (_formKey.currentState!.validate()) {
+                          var log = Logger();
+                          log.wtf(
+                              nameController.text, phoneNumberController.text);
                           await Provider.of<Businesses>(context, listen: false)
                               .editBusiness(Business(
                                   id: widget.business.id,
@@ -230,13 +242,25 @@ class _EditBusinessState extends State<EditBusiness> {
                                   name: nameController.text,
                                   phoneNumber: phoneNumberController.text,
                                   type: typeController.text,
-                                  lat: widget.business.lat,
-                                  lng: widget.business.lng,
+                                  lat: lat,
+                                  lng: lng,
                                   description: descriptionController.text,
-                                  imageUrl: "imageURL",
+                                  imageUrl: filepath == ""
+                                      ? widget.business.imageUrl
+                                      : filepath,
                                   rating: 0,
                                   deliveryCharges: 0,
                                   locationDescription: addressController.text));
+
+                          Future.delayed(const Duration(seconds: 1), () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        BusinessList(userId: widget.userId),
+                                    settings: const RouteSettings(
+                                        name: "/businessList")));
+                          });
                           // Navigator.push(
                           //   context,
                           //   MaterialPageRoute(

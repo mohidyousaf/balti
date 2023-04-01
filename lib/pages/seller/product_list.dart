@@ -1,4 +1,5 @@
 import 'package:balti_app/pages/seller/add_product.dart';
+import 'package:balti_app/widgets/product_card%20copy.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -118,11 +119,13 @@ class _ProductListState extends State<ProductList> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => EditProduct(
+                                          userId: widget.userId,
                                           product: products[i],
                                         )),
                               );
                             },
-                            child: ProductCard(
+                            child: ProductCardCopy(
+                              id: products[i].id,
                               productName: products[i].name,
                               price: products[i].price,
                               delay: '${products[i].duration.toInt()} min',

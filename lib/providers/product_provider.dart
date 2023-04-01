@@ -143,10 +143,10 @@ class Products with ChangeNotifier {
       "name": product.name,
       "price": product.price,
       "description": product.description,
-      // "duration": product.duration,
+      "duration": product.duration,
       // "rating": 0,
-      "images": product.images,
-      "videos": product.videos,
+      // "images": product.images,
+      // "videos": product.videos,
     });
     final response = await http.put(
       Uri.parse(
@@ -157,7 +157,8 @@ class Products with ChangeNotifier {
     print(response.statusCode);
     print(jsonDecode(response.body));
     if (response.statusCode == 200) {
-      print("Product Updated");
+      log.i("Product Updated");
+      log.wtf(jsonDecode(response.body));
       notifyListeners();
     } else {
       // If the server did not return a 201 CREATED response,

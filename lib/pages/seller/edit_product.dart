@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:balti_app/pages/seller/business_list.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,11 @@ import '../../widgets/small_form_field.dart';
 import '../../widgets/video_builder.dart';
 
 class EditProduct extends StatefulWidget {
-  const EditProduct({Key? key, required this.product}) : super(key: key);
+  const EditProduct({Key? key, required this.product, required this.userId})
+      : super(key: key);
 
   final Product product;
+  final String userId;
 
   @override
   State<EditProduct> createState() => _EditProductState();
@@ -93,12 +96,12 @@ class _EditProductState extends State<EditProduct> {
 
   @override
   Widget build(BuildContext context) {
-    nameController.text = widget.product.name;
-    descriptionController.text = widget.product.description;
-    priceController.text = widget.product.price.toString();
-    durationController.text = widget.product.duration.toString();
-    images = widget.product.images;
-    videos = widget.product.videos;
+    // nameController.text = widget.product.name;
+    // descriptionController.text = widget.product.description;
+    // priceController.text = widget.product.price.toString();
+    // durationController.text = widget.product.duration.toString();
+    // images = widget.product.images;
+    // videos = widget.product.videos;
     MediaQueryData mediaQuery = MediaQuery.of(context);
     TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
@@ -333,22 +336,31 @@ class _EditProductState extends State<EditProduct> {
                                   imageUrl: "assets/images/burger.jpg",
                                   images: images,
                                   videos: videos));
+                          Future.delayed(const Duration(seconds: 1), () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        BusinessList(userId: widget.userId),
+                                    settings: const RouteSettings(
+                                        name: "/businessList")));
+                          });
                         }
                       },
                     ),
                     SizedBox(
                       height: mediaQuery.size.height * 0.01379,
                     ),
-                    CustomIconButton(
-                      color: const Color(0xffD11B26),
-                      // icon: Icons.login,
-                      buttonLabel: "Delete",
-                      onPressHandler: () async {
-                        if (_formKey.currentState!.validate()) {
-                          Navigator.pop(context);
-                        }
-                      },
-                    ),
+                    // CustomIconButton(
+                    //   color: const Color(0xffD11B26),
+                    //   // icon: Icons.login,
+                    //   buttonLabel: "Delete",
+                    //   onPressHandler: () async {
+                    //     if (_formKey.currentState!.validate()) {
+                    //       Navigator.pop(context);
+                    //     }
+                    //   },
+                    // ),
                     SizedBox(
                       height: mediaQuery.size.height * 2 * 0.01379,
                     ),

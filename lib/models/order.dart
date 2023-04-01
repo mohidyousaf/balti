@@ -1,3 +1,5 @@
+import 'package:logger/logger.dart';
+
 class Order {
   final String id;
   final String userId;
@@ -29,10 +31,18 @@ class Order {
       required this.userName});
 
   factory Order.fromJson(Map<String, dynamic> json) {
+    double total = 0;
+
+    for (var i = 0; i < json['products'].length; i = i + 1) {
+      total += json['products'][i]['qty'];
+    }
+
+    var log = Logger();
+    log.wtf(total);
     return Order(
       id: json['_id'],
       userName: json['User']['name'],
-      quantity: 10,
+      quantity: total.toInt(),
       price: json['payable_amount'],
       userId: json['User']['_id'],
       businessId: json['Business'],

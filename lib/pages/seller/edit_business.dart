@@ -55,6 +55,17 @@ class _EditBusinessState extends State<EditBusiness> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    nameController.text = widget.business.name;
+    descriptionController.text = widget.business.description;
+    phoneNumberController.text = widget.business.phoneNumber;
+    typeController.text = widget.business.type;
+    addressController.text = widget.business.locationDescription;
+    // imageFile = File.fromUri(Uri.parse(widget.business.imageUrl));
+  }
+
+  @override
   void dispose() {
     nameController.dispose();
     phoneNumberController.dispose();
@@ -67,12 +78,6 @@ class _EditBusinessState extends State<EditBusiness> {
 
   @override
   Widget build(BuildContext context) {
-    // nameController.text = widget.business.name;
-    // descriptionController.text = widget.business.description;
-    // phoneNumberController.text = widget.business.phoneNumber;
-    // typeController.text = widget.business.type;
-    // addressController.text = widget.business.locationDescription;
-    // imageFile = File.fromUri(Uri.parse(widget.business.imageUrl));
     MediaQueryData mediaQuery = MediaQuery.of(context);
     TextTheme textTheme = Theme.of(context).textTheme;
     double lat = Provider.of<Location>(context).latitude;

@@ -78,6 +78,12 @@ class _EditProductState extends State<EditProduct> {
   @override
   void initState() {
     super.initState();
+    nameController.text = widget.product.name;
+    descriptionController.text = widget.product.description;
+    priceController.text = widget.product.price.toString();
+    durationController.text = widget.product.duration.toString();
+    images = widget.product.images;
+    videos = widget.product.videos;
     Future.delayed(
       Duration.zero,
       () async {
@@ -96,12 +102,6 @@ class _EditProductState extends State<EditProduct> {
 
   @override
   Widget build(BuildContext context) {
-    // nameController.text = widget.product.name;
-    // descriptionController.text = widget.product.description;
-    // priceController.text = widget.product.price.toString();
-    // durationController.text = widget.product.duration.toString();
-    // images = widget.product.images;
-    // videos = widget.product.videos;
     MediaQueryData mediaQuery = MediaQuery.of(context);
     TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(

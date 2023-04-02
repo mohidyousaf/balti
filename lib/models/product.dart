@@ -34,14 +34,14 @@ class Product with ChangeNotifier {
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: json['_id'],
-      name: json['name'],
-      businessId: json['business_id'],
+      id: json['product_id'] ?? json['_id'],
+      name: json['name'] ?? json['product_name'],
+      businessId: json['business_id'] ?? "",
       description: json['description'] ?? "",
       price: json['price'] != null ? json['price'].toDouble() : 0,
       duration: json['duration'] != null ? json['duration'].toDouble() : 0,
-      imageUrl:
-          "assets/images/subway.png", // hardcoded for now, to be changed when backend is fixed
+      imageUrl: json['imageUrl'] ??
+          "https://balti-files.s3.ap-northeast-1.amazonaws.com/tacos.jpg", // hardcoded for now, to be changed when backend is fixed
       rating: json['rating'] != null ? json['rating'].toDouble() : 0,
       images: json['images'] != null ? List<String>.from(json['images']) : [],
       videos: json['videos'] != null ? List<String>.from(json['videos']) : [],

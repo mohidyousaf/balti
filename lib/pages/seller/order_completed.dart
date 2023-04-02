@@ -1,4 +1,5 @@
 import 'package:balti_app/models/order.dart';
+import 'package:balti_app/models/product.dart';
 import 'package:balti_app/providers/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -64,73 +65,89 @@ class _OrderCompletedState extends State<OrderCompleted> {
               ),
             ),
           ]),
-      body: Stack(children: [
-        Padding(
-          padding: EdgeInsets.only(
-              left: mediaQuery.size.width * 0.05,
-              top: mediaQuery.size.width * 0.01),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Completed",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: mediaQuery.size.height * 0.040,
-                    fontFamily: "Poppins"),
-              ),
-              SizedBox(
-                height: mediaQuery.size.height * 0.02,
-              ),
-              FutureBuilder(
-                  future: getCompletedOrders,
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.done) {
-                      return Container(
-                        // height: mediaQuery.size.height * 0.43,
-                        alignment: Alignment.topLeft,
-                        child: context.watch<Orders>().completedOrders.isEmpty
-                            ? Center(
-                                child: Text(
-                                "No Orders",
-                                style: TextStyle(
-                                    fontSize: mediaQuery.size.width * 0.05,
-                                    color: Colors.black),
-                              ))
-                            : Expanded(
-                                child: Column(
-                                    children: context
-                                        .watch<Orders>()
-                                        .completedOrders
-                                        .map((e) => orderDetailsCard(
-                                            mediaQuery,
-                                            e.userName,
-                                            "address",
-                                            e.quantity,
-                                            e.price,
-                                            e.id,
-                                            Provider.of<Orders>(context,
-                                                listen: false),
-                                            context))
-                                        .toList())),
-                      );
-                    } else {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                  })
-            ],
+      body: SingleChildScrollView(
+        child: Stack(children: [
+          Padding(
+            padding: EdgeInsets.only(
+                left: mediaQuery.size.width * 0.05,
+                top: mediaQuery.size.width * 0.01),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Completed",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: mediaQuery.size.height * 0.040,
+                      fontFamily: "Poppins"),
+                ),
+                SizedBox(
+                  height: mediaQuery.size.height * 0.02,
+                ),
+                FutureBuilder(
+                    future: getCompletedOrders,
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return Container(
+                          // height: mediaQuery.size.height * 0.43,
+                          alignment: Alignment.topLeft,
+                          child: context.watch<Orders>().completedOrders.isEmpty
+                              ? Center(
+                                  child: Text(
+                                  "No Orders",
+                                  style: TextStyle(
+                                      fontSize: mediaQuery.size.width * 0.05,
+                                      color: Colors.black),
+                                ))
+                              : Expanded(
+                                  child: Column(
+                                  children: context
+                                      .watch<Orders>()
+                                      .completedOrders
+                                      .map((e) => orderDetailsCard(
+                                          mediaQuery,
+                                          e.userName,
+                                          "address",
+                                          e.quantity,
+                                          e.price,
+                                          e.id,
+                                          Provider.of<Orders>(context,
+                                              listen: false),
+                                          context,
+                                          Provider.of<Orders>(context,
+                                                  listen: false)
+                                              .getSpecificOrderProduct(
+                                                  e.id, "Completed")))
+                                      .toList(),
+                                )),
+                        );
+                      } else {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                    })
+              ],
+            ),
           ),
-        ),
-      ]),
+        ]),
+      ),
     );
   }
 }
 
 Widget orderDetailsCard(
-    mediaQuery, name, address, quantity, price, id, caller, context) {
+    mediaQuery, name, address, quantity, price, id, caller, context, products) {
+  List<Product> filteredProducts = [];
+  List<String> ids = [];
+  for (var i = 0; i < products.length; i++) {
+    log.wtf("id", products[i].id);
+    if (!ids.contains(products[i].id)) {
+      filteredProducts.add(products[i]);
+      ids.add(products[i].id);
+    }
+  }
   return Card(
     margin: EdgeInsets.only(
         top: mediaQuery.size.height * 0.01,
@@ -190,6 +207,45 @@ Widget orderDetailsCard(
                 ),
               )
             ],
+          ),
+          Container(
+            height: mediaQuery.size.height * .15,
+            margin: EdgeInsets.only(
+              left: SizeConfig.screenWidth / 36,
+            ),
+            width: double.infinity,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              // shrinkWrap: true,
+              // physics: const ScrollPhysics(),
+              itemCount: filteredProducts.length,
+              itemBuilder: (BuildContext context, int i) {
+                return Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      width: mediaQuery.size.width * 0.5,
+                      height: mediaQuery.size.height * 0.1,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16.0),
+                          child: Image.network(
+                            filteredProducts[i].imageUrl,
+                            colorBlendMode: BlendMode.dstATop,
+                            color: Colors.white.withOpacity(0.9),
+                            fit: BoxFit.cover,
+                          )),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('${products[i].name}'),
+                        Text('PKR ${products[i].price}'),
+                      ],
+                    )
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),

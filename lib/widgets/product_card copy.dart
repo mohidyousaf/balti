@@ -53,6 +53,8 @@ class _ProductCardCopyState extends State<ProductCardCopy> {
         imageUrl: widget.imageUrl,
         images: widget.images,
         videos: []);
+
+    log.d("In Product", product.name);
     SizeConfig().init(context);
     return GestureDetector(
       onTap: () {

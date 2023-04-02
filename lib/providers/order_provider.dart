@@ -30,6 +30,9 @@ class Orders with ChangeNotifier {
   List<Order> approvalOrders = [];
   List<Order> processedOrders = [];
   List<Order> completedOrders = [];
+  List<Map<String, Product>> approvalOrdersProducts = [];
+  List<Map<String, Product>> processedOrdersProducts = [];
+  List<Map<String, Product>> completedOrdersProducts = [];
 
   List<Order> get getApprovalOrders {
     return approvalOrders;
@@ -53,6 +56,43 @@ class Orders with ChangeNotifier {
     return [...orders];
   }
 
+  List<Product> getSpecificOrderProduct(String id, String type) {
+    List<Product> products = [];
+    if (type == "Approval") {
+      for (var i = 0; i < approvalOrdersProducts.length; i++) {
+        if (approvalOrdersProducts[i].keys.first == id) {
+          products.add(
+              approvalOrdersProducts[i][approvalOrdersProducts[i].keys.first]!);
+        }
+      }
+      return products;
+    }
+    if (type == "Progress") {
+      for (var i = 0; i < processedOrdersProducts.length; i++) {
+        if (processedOrdersProducts[i].keys.first == id) {
+          products.add(processedOrdersProducts[i]
+              [processedOrdersProducts[i].keys.first]!);
+        }
+      }
+      log.i("Getting specifics");
+      log.wtf(products);
+      return products;
+    }
+
+    if (type == "Completed") {
+      for (var i = 0; i < completedOrdersProducts.length; i++) {
+        if (completedOrdersProducts[i].keys.first == id) {
+          products.add(completedOrdersProducts[i]
+              [completedOrdersProducts[i].keys.first]!);
+        }
+      }
+      log.i("Getting specifics");
+      log.wtf(products);
+      return products;
+    }
+    return [];
+  }
+
   Future<void> getOrdersByStatus(String status, String userId) async {
     // log.d("In getOrderbystatus");
     dynamic response;
@@ -69,18 +109,36 @@ class Orders with ChangeNotifier {
     if (response != null) {
       if (status == "In Approval") {
         for (var i = 0; i < response.length; i = i + 1) {
-          approvalOrders.add(Order.fromJson(response[i]));
+          Order order = Order.fromJson(response[i]);
+          approvalOrders.add(order);
+          for (var j = 0; j < response[i]['products'].length; j++) {
+            Product product = Product.fromJson(response[i]['products'][j]);
+            log.i("product", product.name);
+            approvalOrdersProducts.add({order.id: product});
+          }
         }
       } else if (status == "In Processing") {
         for (var i = 0; i < response.length; i = i + 1) {
-          processedOrders.add(Order.fromJson(response[i]));
+          Order order = Order.fromJson(response[i]);
+          processedOrders.add(order);
+          for (var j = 0; j < response[i]['products'].length; j++) {
+            processedOrdersProducts
+                .add({order.id: Product.fromJson(response[i]['products'][j])});
+          }
         }
       } else if (status == "Completed") {
         for (var i = 0; i < response.length; i = i + 1) {
-          completedOrders.add(Order.fromJson(response[i]));
+          Order order = Order.fromJson(response[i]);
+          completedOrders.add(order);
+          for (var j = 0; j < response[i]['products'].length; j++) {
+            completedOrdersProducts
+                .add({order.id: Product.fromJson(response[i]['products'][j])});
+          }
         }
       }
     }
+
+    log.wtf(approvalOrdersProducts, completedOrdersProducts);
     notifyListeners();
   }
 
@@ -142,11 +200,13 @@ class Orders with ChangeNotifier {
 
     var productsToAdd = [];
     for (var i = 0; i < products.length; i++) {
+      log.wtf('image', products[i].images[0]);
       productsToAdd.add({
         'product_id': products[i].id,
         'product_name': products[i].name,
         'qty': quantity[i].quantity,
-        'price': quantity[i].price
+        'price': quantity[i].price,
+        'imageUrl': products[i].images[0]
       });
     }
 

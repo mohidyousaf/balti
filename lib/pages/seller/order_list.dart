@@ -30,8 +30,6 @@ class _OrderListState extends State<OrderList> {
     super.initState();
     setSizes(int a, int b, int c) {
       setState(() {
-        log.wtf(a, b);
-        log.wtf(c);
         approvalOrdersSize = a;
         processedOrdersSize = b;
         completedOrdersSize = c;

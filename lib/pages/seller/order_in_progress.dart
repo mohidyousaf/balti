@@ -1,4 +1,5 @@
 import 'package:balti_app/models/order.dart';
+import 'package:balti_app/models/product.dart';
 import 'package:balti_app/providers/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -110,7 +111,11 @@ class _OrdersInProgressState extends State<OrdersInProgress> {
                                             e.id,
                                             Provider.of<Orders>(context,
                                                 listen: false),
-                                            context))
+                                            context,
+                                            Provider.of<Orders>(context,
+                                                    listen: false)
+                                                .getSpecificOrderProduct(
+                                                    e.id, "Progress")))
                                         .toList())),
                       );
                     } else {
@@ -128,7 +133,16 @@ class _OrdersInProgressState extends State<OrdersInProgress> {
 }
 
 Widget orderDetailsCard(
-    mediaQuery, name, address, quantity, price, id, caller, context) {
+    mediaQuery, name, address, quantity, price, id, caller, context, products) {
+  List<Product> filteredProducts = [];
+  List<String> ids = [];
+  for (var i = 0; i < products.length; i++) {
+    log.wtf("id", products[i].id);
+    if (!ids.contains(products[i].id)) {
+      filteredProducts.add(products[i]);
+      ids.add(products[i].id);
+    }
+  }
   return Card(
     margin: EdgeInsets.only(
         top: mediaQuery.size.height * 0.01,
@@ -188,6 +202,45 @@ Widget orderDetailsCard(
                 ),
               )
             ],
+          ),
+          Container(
+            height: mediaQuery.size.height * .15,
+            margin: EdgeInsets.only(
+              left: SizeConfig.screenWidth / 36,
+            ),
+            width: double.infinity,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              // shrinkWrap: true,
+              // physics: const ScrollPhysics(),
+              itemCount: filteredProducts.length,
+              itemBuilder: (BuildContext context, int i) {
+                return Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      width: mediaQuery.size.width * 0.5,
+                      height: mediaQuery.size.height * 0.1,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16.0),
+                          child: Image.network(
+                            filteredProducts[i].imageUrl,
+                            colorBlendMode: BlendMode.dstATop,
+                            color: Colors.white.withOpacity(0.9),
+                            fit: BoxFit.cover,
+                          )),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('${products[i].name}'),
+                        Text('PKR ${products[i].price}'),
+                      ],
+                    )
+                  ],
+                );
+              },
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

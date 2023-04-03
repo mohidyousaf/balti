@@ -44,7 +44,6 @@ class _EditProductState extends State<EditProduct> {
 
   bool isImage(String? path) {
     final mimeType = lookupMimeType(path!);
-
     return mimeType!.startsWith('image/');
   }
 
@@ -117,7 +116,9 @@ class _EditProductState extends State<EditProduct> {
                 icon: const Icon(Icons.arrow_back_ios),
                 color: Colors.black,
                 iconSize: mediaQuery.size.width * 0.07,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
             actions: [

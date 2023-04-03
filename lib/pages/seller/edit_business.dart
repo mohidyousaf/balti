@@ -95,7 +95,9 @@ class _EditBusinessState extends State<EditBusiness> {
                 icon: const Icon(Icons.arrow_back_ios),
                 color: Colors.black,
                 iconSize: mediaQuery.size.width * 0.07,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
             actions: [

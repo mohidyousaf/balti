@@ -9,7 +9,7 @@ import '../../utils/size_config.dart';
 
 class FeedBack extends StatefulWidget {
   const FeedBack({Key? key, required this.userId}) : super(key: key);
-  
+
   final String userId;
 
   @override
@@ -23,11 +23,12 @@ class _FeedBackState extends State<FeedBack> {
     void initState() {
       super.initState();
       // context.watch<BusinessesList>().getBusinesses(phoneNumber);
-      Provider.of<Businesses>(context, listen: false).findByUserId(widget.userId);
+      Provider.of<Businesses>(context, listen: false)
+          .findByUserId(widget.userId);
       Provider.of<FeedbackItems>(context, listen: false)
           .getFeedbackOfBusiness(Provider.of<Businesses>(
-      context,
-    ).businesses[0].id);
+        context,
+      ).businesses[0].id);
     }
 
     @override
@@ -61,22 +62,22 @@ class _FeedBackState extends State<FeedBack> {
                             fontWeight: FontWeight.w500)),
                     rating < 3
                         ? Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Icon(
-                              Icons.thumb_up_alt_rounded,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Icon(
-                              Icons.thumb_down_alt_rounded,
-                              color: Colors.red,
-                            ),
-                          )
-                        ],
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Icon(
+                                  Icons.thumb_up_alt_rounded,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Icon(
+                                  Icons.thumb_down_alt_rounded,
+                                  color: Colors.red,
+                                ),
+                              )
+                            ],
                           )
                         : Container(
                             child: Row(
@@ -152,7 +153,9 @@ class _FeedBackState extends State<FeedBack> {
               icon: const Icon(Icons.arrow_back_ios),
               color: Colors.black,
               iconSize: mediaQuery.size.width * 0.08,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ),
           actions: [
@@ -188,27 +191,28 @@ class _FeedBackState extends State<FeedBack> {
               Container(
                 height: mediaQuery.size.height * 0.6,
                 child: Expanded(
-                    child: context.watch<FeedbackItems>().businessFeedback.isEmpty
-                        ? Center(
-                            child: Text(
-                            "No Feedbacks to display",
-                            style: TextStyle(
-                                fontSize: mediaQuery.size.width * 0.05,
-                                color: Colors.black),
-                          ))
-                        : ListView(
-                            children: context
-                                .watch<FeedbackItems>()
-                                .businessFeedback
-                                .map((data) => FeedbackItemCard(
-                                    mediaQuery,
-                                    data.businessId,
-                                    data.userId,
-                                    data.prodId,
-                                    data.comment,
-                                    data.rating))
-                                .toList(),
-                          )),
+                    child:
+                        context.watch<FeedbackItems>().businessFeedback.isEmpty
+                            ? Center(
+                                child: Text(
+                                "No Feedbacks to display",
+                                style: TextStyle(
+                                    fontSize: mediaQuery.size.width * 0.05,
+                                    color: Colors.black),
+                              ))
+                            : ListView(
+                                children: context
+                                    .watch<FeedbackItems>()
+                                    .businessFeedback
+                                    .map((data) => FeedbackItemCard(
+                                        mediaQuery,
+                                        data.businessId,
+                                        data.userId,
+                                        data.prodId,
+                                        data.comment,
+                                        data.rating))
+                                    .toList(),
+                              )),
               )
             ]),
           )

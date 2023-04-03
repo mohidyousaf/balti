@@ -48,7 +48,9 @@ class _OrdersInProgressState extends State<OrdersInProgress> {
               icon: const Icon(Icons.arrow_back_ios),
               color: Colors.black,
               iconSize: mediaQuery.size.width * 0.08,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ),
           actions: [

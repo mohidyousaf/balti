@@ -59,7 +59,8 @@ class _CheckoutState extends State<Checkout> {
     List<Product> products = Provider.of<UserCart>(
       context,
     ).cartProducts;
-
+    List<Business> businesses =
+        Provider.of<Businesses>(context, listen: false).businesses;
     List<ProdQuanity> productQuantity = Provider.of<UserCart>(
       context,
     ).prodQuantity;
@@ -279,7 +280,7 @@ class _CheckoutState extends State<Checkout> {
                                         child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(20),
-                                            child: Image.asset(
+                                            child: Image.network(
                                               data.imageUrl,
                                               // width: mediaQuery.size.width * 0.2,
                                               // height: mediaQuery.size.height * 0.1,
@@ -302,7 +303,8 @@ class _CheckoutState extends State<Checkout> {
                                                       mediaQuery.size.width *
                                                           0.035,
                                                   fontWeight: FontWeight.w500)),
-                                          Text("Business #${data.businessId}",
+                                          Text(
+                                              "Business ${businesses.firstWhere((element) => element.id == data.businessId).name.toUpperCase()}",
                                               style: TextStyle(
                                                   letterSpacing: 0.08,
                                                   fontSize:

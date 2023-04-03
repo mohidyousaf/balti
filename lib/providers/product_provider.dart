@@ -120,7 +120,7 @@ class Products with ChangeNotifier {
       "name": product.name,
       "price": product.price.toString(),
       "description": product.description,
-      // "duration": product.duration,
+      "duration": product.duration.toString(),
       // "rating": 0,
       // "images": product.images,
       // "videos": product.videos,

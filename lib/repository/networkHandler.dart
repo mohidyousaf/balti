@@ -13,8 +13,10 @@ class NetworkHandler {
 
   Future<dynamic> get(String url) async {
     url = formatter(url);
+    log.i(url);
     // String token = await storage.read(key: 'token');
     var resp = await http.get(Uri.parse(url));
+    log.wtf(resp.body);
 
     if (resp.statusCode == 200 || resp.statusCode == 201) {
       log.i(resp.body);
@@ -54,7 +56,7 @@ class NetworkHandler {
     var response = await http.put(Uri.parse(url),
         headers: {"Content-type": "application/json"}, body: json.encode(body));
 
-    print(response);
+    log.i(response, response.body);
     return response;
   }
 

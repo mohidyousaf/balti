@@ -58,7 +58,7 @@ class _UserDashScreenState extends State<UserDashScreen> {
           ),
         ],
       ),
-      'body': const EditProfileBody(),
+      'body': const EditProfileBody(userId: "63d134f3ae6ba6c5e178e3ca"),
     },
     {
       'appBar': AppBar(

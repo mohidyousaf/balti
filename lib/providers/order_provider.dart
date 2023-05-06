@@ -217,8 +217,7 @@ class Orders with ChangeNotifier {
     dynamic response;
     try {
       response = await http.post(
-        Uri.parse(
-            'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/orders'),
+        Uri.parse('https://balti.herokuapp.com/api/orders'),
         headers: {"Content-Type": "application/json"},
         body: json.encode(body),
       );
@@ -235,7 +234,7 @@ class Orders with ChangeNotifier {
   //   // create new cart item with current cart id
   //   orderItems = [];
   //   final response = await http
-  //       .get(Uri.parse('http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/businesses/list/$id'));
+  //       .get(Uri.parse('https://balti.herokuapp.com/api/businesses/list/$id'));
 
   //   if (response.statusCode == 200) {
   //     // If the server did return a 200 OK response,

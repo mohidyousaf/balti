@@ -6,8 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
 class NetworkHandler {
-  String baseurl =
-      'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/';
+  String baseurl = 'https://balti.herokuapp.com/api/';
   var log = Logger();
   FlutterSecureStorage storage = FlutterSecureStorage();
 

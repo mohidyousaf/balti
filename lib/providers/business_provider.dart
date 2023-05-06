@@ -103,8 +103,7 @@ class Businesses with ChangeNotifier {
   Future<void> editBusiness(Business business) async {
     //Send Api call to server for edit
     final response = await http.put(
-      Uri.parse(
-          'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/businesses/${business.id}'),
+      Uri.parse('https://balti.herokuapp.com/api/businesses/${business.id}'),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "user": business.ownerId,
@@ -136,8 +135,8 @@ class Businesses with ChangeNotifier {
 
   Future<void> deleteBusiness(String id) async {
     //Send Api call to server for delete
-    final response = await http.delete(Uri.parse(
-        'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/businesses/$id'));
+    final response = await http
+        .delete(Uri.parse('https://balti.herokuapp.com/api/businesses/$id'));
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
@@ -155,8 +154,8 @@ class Businesses with ChangeNotifier {
   Future<void> getAllBusinesses() async {
     //Send Api call to server for delete
     businesses = [];
-    final response = await http.get(Uri.parse(
-        'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/businesses'));
+    final response =
+        await http.get(Uri.parse('https://balti.herokuapp.com/api/businesses'));
 
     if (response.statusCode == 200) {
       // print(jsonDecode(response.body));

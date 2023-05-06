@@ -76,11 +76,9 @@ class UserCart with ChangeNotifier {
 
       dynamic response;
       try {
-        log.d(
-            'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/cart/$cartId');
+        log.d('https://balti.herokuapp.com/api/cart/$cartId');
         response = await http.put(
-          Uri.parse(
-              'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/cart/$cartId'),
+          Uri.parse('https://balti.herokuapp.com/api/cart/$cartId'),
           headers: {"Content-Type": "application/json"},
           body: json.encode(body),
         );
@@ -121,8 +119,7 @@ class UserCart with ChangeNotifier {
       dynamic response;
       try {
         response = await http.post(
-          Uri.parse(
-              'http://Baltiprojectprod-env.eba-tegvsnxd.us-east-1.elasticbeanstalk.com/api/cart'),
+          Uri.parse('https://balti.herokuapp.com/api/cart'),
           headers: {"Content-Type": "application/json"},
           body: json.encode(body),
         );

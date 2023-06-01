@@ -161,8 +161,8 @@ class _ProductCardState extends State<ProductCard> {
                         },
                         // ignore: prefer_const_constructors
                         icon: const Icon(
-                          size: 20,
                           Icons.favorite,
+                          size: 20,
                           color: Color(0xffb74093),
                         ))
                     : IconButton(
@@ -176,8 +176,8 @@ class _ProductCardState extends State<ProductCard> {
                         },
                         // ignore: prefer_const_constructors
                         icon: const Icon(
-                          size: 20,
                           Icons.favorite_border_sharp,
+                          size: 20,
                         ))
               ],
             ),

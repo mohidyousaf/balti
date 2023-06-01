@@ -1,0 +1,4 @@
+#Sat May 20 23:47:57 PKT 2023
+base.0=/Users/mohidyousaf/Balti/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

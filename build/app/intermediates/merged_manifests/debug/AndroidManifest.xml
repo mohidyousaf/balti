@@ -26,9 +26,7 @@
         </intent>
         <!-- Needs to be explicitly declared on Android R+ -->
         <package android:name="com.google.android.apps.maps" />
-    </queries>
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Create a unique permission for your app and use it so only your app can receive your OneSignal messages. -->
+    </queries> <!-- Create a unique permission for your app and use it so only your app can receive your OneSignal messages. -->
     <permission
         android:name="com.example.balti_app.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
@@ -44,6 +42,7 @@
          Vibration settings of the device still apply.
     -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!--
  Use to restore notifications the user hasn't interacted with.
          They could be missed notifications if the user reboots their device if this isn't in place.
@@ -71,17 +70,12 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
     <application
         android:name="io.flutter.app.FlutterMultiDexApplication"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="balti_app"
-        android:supportsRtl="true" >
+        android:label="balti_app" >
         <activity
             android:name="com.example.balti_app.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -376,37 +370,6 @@
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
             android:exported="false" />
-
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.ForceChangePasswordActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_force_change_password"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.ForgotPasswordActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_forgot_password"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.SignUpActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_sign_up"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.MFAActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_mfa"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.SignUpConfirmActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_sign_up_confirm"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.ui.SignInActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_sign_in"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

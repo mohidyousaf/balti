@@ -1,5 +1,5 @@
 import 'package:balti_app/widgets/AppBars/user_app_bar.dart';
-import 'package:balti_app/widgets/search_bar.dart';
+import 'package:balti_app/widgets/search_bar.dart' as SearchBar;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -77,7 +77,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                   ),
                 ),
               ),
-              const SearchBar(),
+              // const SearchBar,
               SizedBox(
                 height: SizeConfig.screenHeight / 72.5,
               ),

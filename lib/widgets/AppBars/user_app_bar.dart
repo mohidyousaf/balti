@@ -8,7 +8,7 @@ import '../../providers/location_provider.dart';
 import '../../utils/size_config.dart';
 import '../search_bar.dart';
 
-class UserAppBar extends StatefulWidget with PreferredSizeWidget {
+class UserAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize;
 
@@ -45,9 +45,9 @@ class _UserAppBarState extends State<UserAppBar> {
     SizeConfig().init(context);
     TextTheme textTheme = Theme.of(context).textTheme;
     return PreferredSize(
-      preferredSize: Size(SizeConfig.screenWidth, SizeConfig.screenHeight*1),
+      preferredSize: Size(SizeConfig.screenWidth, SizeConfig.screenHeight * 1),
       child: AppBar(
-        toolbarHeight: SizeConfig.screenHeight*0.12,
+        toolbarHeight: SizeConfig.screenHeight * 0.12,
         titleSpacing: 0,
         automaticallyImplyLeading: false,
         title: GestureDetector(

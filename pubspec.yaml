@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.6 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -49,7 +49,6 @@ dependencies:
   onesignal_flutter: ^3.3.0
   logger: ^1.1.0
   flutter_secure_storage: ^7.0.1
-  aws_s3: ^0.1.1+hotfix.5
   intl: ^0.18.0
   google_fonts: ^4.0.3
   web_ffi: ^0.7.2

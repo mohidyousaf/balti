@@ -11,7 +11,7 @@ import '../../utils/size_config.dart';
 import '../DashScreensContent/checkout.dart';
 import '../search_bar.dart';
 
-class HomeAppBar extends StatefulWidget with PreferredSizeWidget {
+class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize;
 

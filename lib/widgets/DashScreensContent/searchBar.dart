@@ -10,7 +10,7 @@ var log = Logger();
 
 class SearchBarContainer extends StatelessWidget {
   BuildContext context;
-  SearchBarContainer({super.key, required this.context});
+  SearchBarContainer({required this.context});
   @override
   Widget build(BuildContext context) {
     return SearchBar();
